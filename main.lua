@@ -657,29 +657,29 @@ local games45 = Instance.new('Folder')
 games45.Name = "games"
 games45.Parent = game44
 
-local 12364565867408046 = Instance.new('Frame')
-12364565867408046.Name = "123645658674080"
-12364565867408046.Parent = games45
-12364565867408046.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-12364565867408046.BackgroundTransparency = 1
-12364565867408046.BorderColor3 = Color3.fromRGB(0, 0, 0)
-12364565867408046.BorderSizePixel = 0
-12364565867408046.Position = UDim2.new(0, 0, 0, 0)
-12364565867408046.Size = UDim2.new(1, 0, 1, 0)
-12364565867408046.Visible = false
-12364565867408046.ZIndex = 1
-12364565867408046.Active = false
-12364565867408046.Selectable = false
-12364565867408046.LayoutOrder = 0
-12364565867408046.ClipsDescendants = false
-12364565867408046.Rotation = 0
-12364565867408046.AnchorPoint = Vector2.new(0, 0)
-12364565867408046.Transparency = 1
-12364565867408046.Style = Enum.FrameStyle.Custom
+local game12364565867408046 = Instance.new('Frame')
+game12364565867408046.Name = "game_123645658674080"
+game12364565867408046.Parent = games45
+game12364565867408046.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+game12364565867408046.BackgroundTransparency = 1
+game12364565867408046.BorderColor3 = Color3.fromRGB(0, 0, 0)
+game12364565867408046.BorderSizePixel = 0
+game12364565867408046.Position = UDim2.new(0, 0, 0, 0)
+game12364565867408046.Size = UDim2.new(1, 0, 1, 0)
+game12364565867408046.Visible = false
+game12364565867408046.ZIndex = 1
+game12364565867408046.Active = false
+game12364565867408046.Selectable = false
+game12364565867408046.LayoutOrder = 0
+game12364565867408046.ClipsDescendants = false
+game12364565867408046.Rotation = 0
+game12364565867408046.AnchorPoint = Vector2.new(0, 0)
+game12364565867408046.Transparency = 1
+game12364565867408046.Style = Enum.FrameStyle.Custom
 
 local stuff47 = Instance.new('ScrollingFrame')
 stuff47.Name = "stuff"
-stuff47.Parent = 12364565867408046
+stuff47.Parent = game12364565867408046
 stuff47.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 stuff47.BackgroundTransparency = 1
 stuff47.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -1080,7 +1080,7 @@ uistroke169.Enabled = true
 
 local vals70 = Instance.new('Folder')
 vals70.Name = "vals"
-vals70.Parent = 12364565867408046
+vals70.Parent = game12364565867408046
 
 local infstam71 = Instance.new('BoolValue')
 infstam71.Name = "infstam"
@@ -1601,10 +1601,10 @@ local function fakescript6()
 		end
 	end
 	
-	if script.Parent:FindFirstChild(tostring(game.PlaceId)) then
-		script.Parent:FindFirstChild(tostring(game.PlaceId)).Visible = true
+	if script.Parent:FindFirstChild("game_" .. tostring(game.PlaceId)) then
+		script.Parent:FindFirstChild("game_" .. tostring(game.PlaceId)).Visible = true
 		
-		for i, script in ipairs(script.Parent:FindFirstChild(tostring(game.PlaceId)):GetChildren()) do
+		for i, script in ipairs(script.Parent:FindFirstChild("game_" .. tostring(game.PlaceId)):GetChildren()) do
 			if script:IsA("LocalScript") then
 				script.Enabled = true
 			end
