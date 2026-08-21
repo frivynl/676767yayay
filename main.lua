@@ -1734,22 +1734,29 @@ coroutine.wrap(fakescript5)()
 local function fakescript6()
 	local script = Instance.new('LocalScript', games45)
 	script.Name = "game"
-	for i, frame in ipairs(script.Parent:GetChildren()) do
-		if frame:IsA("Frame") then
-			frame.Visible = false
+	local placeid = tostring(game.PlaceId)
+	local parent = script.Parent
+	
+	for i, child in ipairs(parent:GetChildren()) do
+		if child:IsA("GuiObject") then
+			child.Visible = false
 		end
 	end
 	
-	if script.Parent:FindFirstChild(tostring(game.PlaceId)) then
-		script.Parent:FindFirstChild(tostring(game.PlaceId)).Visible = true
-		
-		for i, script in ipairs(script.Parent:FindFirstChild(tostring(game.PlaceId)):GetChildren()) do
-			if script:IsA("LocalScript") then
-				script.Enabled = true
+	local targetframe = parent:FindFirstChild(placeid)
+	
+	if targetframe then
+		targetframe.Visible = true
+		for i, childscript in ipairs(targetframe:GetChildren()) do
+			if childscript:IsA("LocalScript") then
+				childscript.Enabled = true
 			end
 		end
 	else
-		script.Parent:FindFirstChild("no").Visible = true
+		local noframe = parent:FindFirstChild("no")
+		if noframe then
+			noframe.Visible = true
+		end
 	end
 end
 coroutine.wrap(fakescript6)()
