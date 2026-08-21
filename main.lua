@@ -625,42 +625,33 @@ uistroke136.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
 uistroke136.LineJoinMode = Enum.LineJoinMode.Round
 uistroke136.Enabled = true
 
+local vals37 = Instance.new('Folder')
+vals37.Name = "vals"
+vals37.Parent = skibidi1
+
+local infstam38 = Instance.new('BoolValue')
+infstam38.Name = "infstam"
+infstam38.Parent = vals37
+infstam38.Value = false
+
+local walkspeed39 = Instance.new('NumberValue')
+walkspeed39.Name = "walkspeed"
+walkspeed39.Parent = vals37
+walkspeed39.Value = 10
+
+local sprintspeed40 = Instance.new('NumberValue')
+sprintspeed40.Name = "sprintspeed"
+sprintspeed40.Parent = vals37
+sprintspeed40.Value = 26
+
 local function fakescript1()
 	local script = Instance.new('LocalScript', infstam10)
-	local state = false
 	local button = script.Parent
 	
-	local player = game.Players.LocalPlayer
-	local character = player.Character or player.CharacterAdded:Wait()
-	local vals = character:WaitForChild("Values")
-	local stam = vals:WaitForChild("Sprinting"):WaitForChild("Stamina")
-	local maxstam = vals:WaitForChild("Sprinting"):WaitForChild("MaxStaminaVariable")
-	
-	stam.Changed:Connect(function()
-		if stam.Value == maxstam.Value then return end
-		if state == true then
-			stam.Value = maxstam.Value
-		end
-	end)
-	
-	player.CharacterAdded:Connect(function(char)
-		character = char
-		vals = character.Values
-		stam = vals.Sprinting.Stamina
-		maxstam = vals.Sprinting.MaxStaminaVariable
-		
-		stam.Changed:Connect(function()
-			if stam.Value == maxstam.Value then return end
-			if state == true then
-				stam.Value = maxstam.Value
-			end
-		end)
-	end)
-	
 	button.MouseButton1Click:Connect(function()
-		state = not state
+		script.Parent.Parent.Parent.Parent.vals.infstam.Value = not script.Parent.Parent.Parent.Parent.vals.infstam.Value
 		
-		if state then
+		if script.Parent.Parent.Parent.Parent.vals.infstam.Value then
 			button.Text = "infinite stamina (on)"
 		else
 			button.Text = "infinite stamina (off)"
@@ -673,41 +664,12 @@ local function fakescript2()
 	local script = Instance.new('LocalScript', walkspeed13)
 	local button = script.Parent.button
 	local input = script.Parent.input
-	local player = game.Players.LocalPlayer
-	local character = player.Character or player.CharacterAdded:Wait()
-	local vals = character:WaitForChild("Values")
-	local val = vals:WaitForChild("OriginalSpeed")
-	
-	local forcedspeed = 10
-	
-	player.CharacterAdded:Connect(function(char)
-		character = char
-		vals = character:WaitForChild("Values")
-		val = vals:WaitForChild("OriginalSpeed")
-		
-		task.spawn(function()
-			while task.wait(0.1) do
-				if val then
-					val.Value = forcedspeed
-				end
-			end
-		end)
-	end)
-	
 	
 	button.MouseButton1Click:Connect(function()
 		if tonumber(input.Text) then
-			forcedspeed = tonumber(input.Text)
+			script.Parent.Parent.Parent.Parent.vals.walkspeed.Value = tonumber(input.Text)
 		else
-			forcedspeed = 10
-		end
-	end)
-	
-	task.spawn(function()
-		while task.wait(0.1) do
-			if val then
-				val.Value = forcedspeed
-			end
+			script.Parent.Parent.Parent.Parent.vals.walkspeed.Value = 10
 		end
 	end)
 end
@@ -717,41 +679,12 @@ local function fakescript3()
 	local script = Instance.new('LocalScript', sprintspeed22)
 	local button = script.Parent.button
 	local input = script.Parent.input
-	local player = game.Players.LocalPlayer
-	local character = player.Character or player.CharacterAdded:Wait()
-	local vals = character:WaitForChild("Values")
-	local val = vals:WaitForChild("RunningSpeed")
-	
-	local forcedspeed = 26
-	
-	player.CharacterAdded:Connect(function(char)
-		character = char
-		vals = character:WaitForChild("Values")
-		val = vals:WaitForChild("RunningSpeed")
-		
-		task.spawn(function()
-			while task.wait(0.1) do
-				if val then
-					val.Value = forcedspeed
-				end
-			end
-		end)
-	end)
-	
 	
 	button.MouseButton1Click:Connect(function()
 		if tonumber(input.Text) then
-			forcedspeed = tonumber(input.Text)
+			script.Parent.Parent.Parent.Parent.vals.sprintspeed.Value = tonumber(input.Text)
 		else
-			forcedspeed = 26
-		end
-	end)
-	
-	task.spawn(function()
-		while task.wait(0.1) do
-			if val then
-				val.Value = forcedspeed
-			end
+			script.Parent.Parent.Parent.Parent.vals.sprintspeed.Value = 26
 		end
 	end)
 end
@@ -786,3 +719,32 @@ local function fakescript5()
 	script.Parent.Name = "skibidi"
 end
 coroutine.wrap(fakescript5)()
+
+local function fakescript6()
+	local script = Instance.new('LocalScript', vals37)
+	local player = game.Players.LocalPlayer
+	
+	local function setupchar(char)
+		local values = char:WaitForChild("Values")
+		local walkspeed = values:WaitForChild("OriginalSpeed")
+		local runspeed = values:WaitForChild("RunningSpeed")
+		
+		local stam = values:WaitForChild("Sprinting"):WaitForChild("Stamina")
+		local maxstam = values:WaitForChild("Sprinting"):WaitForChild("MaxStaminaVariable")
+		
+		while char do
+			walkspeed.Value = script.Parent.walkspeed.Value
+			runspeed.Value = script.Parent.sprintspeed.Value
+			
+			if script.Parent.infstam.Value then
+				stam.Value = maxstam.Value
+			end
+			
+			task.wait(0.01)
+		end
+	end
+	
+	player.CharacterAdded:Connect(setupchar)
+	setupchar(player.Character)
+end
+coroutine.wrap(fakescript6)()
