@@ -712,26 +712,26 @@ local games45 = Instance.new('Folder')
 games45.Name = "games"
 games45.Parent = game44
 
-local v12364565867408046 = Instance.new('Frame')
-v12364565867408046.Name = "123645658674080"
-v12364565867408046.BackgroundColor3 = Color3.new(1, 1, 1)
-v12364565867408046.BackgroundTransparency = 1
-v12364565867408046.BorderColor3 = Color3.new(0, 0, 0)
-v12364565867408046.BorderSizePixel = 0
-v12364565867408046.BorderMode = Enum.BorderMode.Outline
-v12364565867408046.Position = UDim2.new(0, 0, 0, 0)
-v12364565867408046.Size = UDim2.new(1, 0, 1, 0)
-v12364565867408046.Visible = false
-v12364565867408046.ZIndex = 1
-v12364565867408046.Active = false
-v12364565867408046.Selectable = false
-v12364565867408046.LayoutOrder = 0
-v12364565867408046.ClipsDescendants = false
-v12364565867408046.Rotation = 0
-v12364565867408046.AnchorPoint = Vector2.new(0, 0)
-v12364565867408046.Transparency = 1
-v12364565867408046.Style = Enum.FrameStyle.Custom
-v12364565867408046.Parent = games45
+local v7359233000619646 = Instance.new('Frame')
+v7359233000619646.Name = "73592330006196"
+v7359233000619646.BackgroundColor3 = Color3.new(1, 1, 1)
+v7359233000619646.BackgroundTransparency = 1
+v7359233000619646.BorderColor3 = Color3.new(0, 0, 0)
+v7359233000619646.BorderSizePixel = 0
+v7359233000619646.BorderMode = Enum.BorderMode.Outline
+v7359233000619646.Position = UDim2.new(0, 0, 0, 0)
+v7359233000619646.Size = UDim2.new(1, 0, 1, 0)
+v7359233000619646.Visible = false
+v7359233000619646.ZIndex = 1
+v7359233000619646.Active = false
+v7359233000619646.Selectable = false
+v7359233000619646.LayoutOrder = 0
+v7359233000619646.ClipsDescendants = false
+v7359233000619646.Rotation = 0
+v7359233000619646.AnchorPoint = Vector2.new(0, 0)
+v7359233000619646.Transparency = 1
+v7359233000619646.Style = Enum.FrameStyle.Custom
+v7359233000619646.Parent = games45
 
 local stuff47 = Instance.new('ScrollingFrame')
 stuff47.Name = "stuff"
@@ -759,7 +759,7 @@ stuff47.VerticalScrollBarInset = Enum.ScrollBarInset.Always
 stuff47.Rotation = 0
 stuff47.AnchorPoint = Vector2.new(0, 0)
 stuff47.Transparency = 1
-stuff47.Parent = v12364565867408046
+stuff47.Parent = v7359233000619646
 
 local uilistlayout48 = Instance.new('UIListLayout')
 uilistlayout48.Name = "UIListLayout"
@@ -1156,7 +1156,7 @@ uistroke169.Parent = input67
 
 local vals70 = Instance.new('Folder')
 vals70.Name = "vals"
-vals70.Parent = v12364565867408046
+vals70.Parent = v7359233000619646
 
 local infstam71 = Instance.new('BoolValue')
 infstam71.Name = "infstam"
@@ -1739,6 +1739,8 @@ local function fakescript6()
 	local placeid = tostring(game.PlaceId)
 	local gameid = tostring(game.GameId)
 	local parent = script.Parent
+	
+	print(placeid)
 	
 	for i, child in ipairs(parent:GetChildren()) do
 		if child:IsA("GuiObject") then
