@@ -725,26 +725,29 @@ local function fakescript6()
 	local player = game.Players.LocalPlayer
 	
 	local function setupchar(char)
+		if not char then return end
 		local values = char:WaitForChild("Values")
 		local walkspeed = values:WaitForChild("OriginalSpeed")
 		local runspeed = values:WaitForChild("RunningSpeed")
-		
+	
 		local stam = values:WaitForChild("Sprinting"):WaitForChild("Stamina")
 		local maxstam = values:WaitForChild("Sprinting"):WaitForChild("MaxStaminaVariable")
-		
-		while char do
+	
+		while char and char.Parent do
 			walkspeed.Value = script.Parent.walkspeed.Value
 			runspeed.Value = script.Parent.sprintspeed.Value
-			
+	
 			if script.Parent.infstam.Value then
 				stam.Value = maxstam.Value
 			end
-			
+	
 			task.wait(0.01)
 		end
 	end
 	
 	player.CharacterAdded:Connect(setupchar)
-	setupchar(player.Character)
+	if player.Character then
+		task.spawn(setupchar, player.Character)
+	end
 end
 coroutine.wrap(fakescript6)()
