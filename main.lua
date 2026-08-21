@@ -2,726 +2,1567 @@ local players = game:GetService('Players')
 local player = players.LocalPlayer
 local playergui = player:WaitForChild('PlayerGui')
 
-local skibidi1 = Instance.new('ScreenGui')
-skibidi1.Name = "skibidi"
-skibidi1.Parent = playergui
-skibidi1.ResetOnSpawn = false
-skibidi1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local plushub1 = Instance.new('ScreenGui')
+plushub1.Name = "plushub"
+plushub1.Parent = playergui
+plushub1.ResetOnSpawn = false
+plushub1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-local container2 = Instance.new('CanvasGroup')
-container2.Name = "container"
-container2.Parent = skibidi1
-container2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-container2.BackgroundTransparency = 1
-container2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-container2.BorderSizePixel = 0
-container2.Position = UDim2.new(0.7038068771362305, 0, 0.39401495456695557, 0)
-container2.Size = UDim2.new(0.2906220853328705, 0, 0.21197007596492767, 0)
-container2.Visible = true
-container2.ZIndex = 1
-container2.Active = false
-container2.Selectable = false
-container2.LayoutOrder = 0
-container2.ClipsDescendants = false
-container2.Rotation = 0
-container2.AnchorPoint = Vector2.new(0, 0)
-container2.Transparency = 1
+local canvas2 = Instance.new('CanvasGroup')
+canvas2.Name = "canvas"
+canvas2.Parent = plushub1
+canvas2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+canvas2.BackgroundTransparency = 1
+canvas2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+canvas2.BorderSizePixel = 0
+canvas2.Position = UDim2.new(0, 0, 0, 0)
+canvas2.Size = UDim2.new(1, 0, 1, 0)
+canvas2.Visible = true
+canvas2.ZIndex = 1
+canvas2.Active = false
+canvas2.Selectable = false
+canvas2.LayoutOrder = 0
+canvas2.ClipsDescendants = true
+canvas2.Rotation = 0
+canvas2.AnchorPoint = Vector2.new(0, 0)
+canvas2.Transparency = 1
 
-local bg3 = Instance.new('ImageLabel')
-bg3.Name = "bg"
-bg3.Parent = container2
-bg3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-bg3.BackgroundTransparency = 0.15000000596046448
-bg3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-bg3.BorderSizePixel = 0
-bg3.Position = UDim2.new(0, 0, 0, 0)
-bg3.Size = UDim2.new(1, 0, 1, 0)
-bg3.Visible = true
-bg3.ZIndex = 1
-bg3.Active = false
-bg3.Selectable = false
-bg3.LayoutOrder = 0
-bg3.ScaleType = Enum.ScaleType.Crop
-bg3.Image = "rbxassetid://13224588218"
-bg3.ImageColor3 = Color3.fromRGB(255, 255, 255)
-bg3.ImageTransparency = 0.5
-bg3.ImageRectOffset = Vector2.new(0, 0)
-bg3.ImageRectSize = Vector2.new(0, 0)
-bg3.SliceCenter = Rect.new(0, 0, 0, 0)
-bg3.SliceScale = 1
-bg3.ClipsDescendants = false
-bg3.Rotation = 0
-bg3.AnchorPoint = Vector2.new(0, 0)
-bg3.Transparency = 0.15000000596046448
+local uilistlayout3 = Instance.new('UIListLayout')
+uilistlayout3.Name = "UIListLayout"
+uilistlayout3.Parent = canvas2
+uilistlayout3.FillDirection = Enum.FillDirection.Vertical
+uilistlayout3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uilistlayout3.VerticalAlignment = Enum.VerticalAlignment.Center
+uilistlayout3.SortOrder = Enum.SortOrder.LayoutOrder
+uilistlayout3.Padding = UDim.new(0, 0)
 
-local uistroke4 = Instance.new('UIStroke')
-uistroke4.Name = "UIStroke"
-uistroke4.Parent = container2
-uistroke4.ZIndex = 1
-uistroke4.Color = Color3.fromRGB(255, 255, 255)
-uistroke4.Thickness = 2
-uistroke4.Transparency = 0.25
-uistroke4.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
-uistroke4.LineJoinMode = Enum.LineJoinMode.Round
-uistroke4.Enabled = true
+local load4 = Instance.new('CanvasGroup')
+load4.Name = "load"
+load4.Parent = canvas2
+load4.BackgroundColor3 = Color3.fromRGB(25, 26, 31)
+load4.BackgroundTransparency = 0.25
+load4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+load4.BorderSizePixel = 0
+load4.Position = UDim2.new(0.357803612947464, 0, 0.44527363777160645, 0)
+load4.Size = UDim2.new(0.5258041024208069, 0, 0.1094527393579483, 0)
+load4.Visible = false
+load4.ZIndex = 1
+load4.Active = false
+load4.Selectable = false
+load4.LayoutOrder = 0
+load4.ClipsDescendants = false
+load4.Rotation = 0
+load4.AnchorPoint = Vector2.new(0, 0)
+load4.Transparency = 0.25
 
-local title5 = Instance.new('TextLabel')
-title5.Name = "title"
-title5.Parent = container2
-title5.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-title5.BackgroundTransparency = 0.25
-title5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-title5.BorderSizePixel = 0
-title5.Position = UDim2.new(0, 0, 0, 0)
-title5.Size = UDim2.new(1, 0, 0.16470588743686676, 0)
-title5.Visible = true
-title5.ZIndex = 2
-title5.Font = Enum.Font.Unknown
-title5.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Medium, Enum.FontStyle.Normal)
-title5.Text = "awesome die of death engine script yay"
-title5.TextColor3 = Color3.fromRGB(255, 255, 255)
-title5.TextScaled = true
-title5.TextSize = 14
-title5.TextTransparency = 0
-title5.TextWrapped = true
-title5.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-title5.TextStrokeTransparency = 0
-title5.TextXAlignment = Enum.TextXAlignment.Center
-title5.TextYAlignment = Enum.TextYAlignment.Center
-title5.RichText = true
-title5.Active = false
-title5.Selectable = false
-title5.LayoutOrder = 0
-title5.ClipsDescendants = false
-title5.Rotation = 0
-title5.AnchorPoint = Vector2.new(0, 0)
-title5.Transparency = 0.25
+local uistroke5 = Instance.new('UIStroke')
+uistroke5.Name = "UIStroke"
+uistroke5.Parent = load4
+uistroke5.ZIndex = 1
+uistroke5.Color = Color3.fromRGB(255, 255, 255)
+uistroke5.Thickness = 4
+uistroke5.Transparency = 0
+uistroke5.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke5.LineJoinMode = Enum.LineJoinMode.Miter
+uistroke5.Enabled = true
 
-local uistroke6 = Instance.new('UIStroke')
-uistroke6.Name = "UIStroke"
-uistroke6.Parent = title5
-uistroke6.ZIndex = 1
-uistroke6.Color = Color3.fromRGB(0, 0, 0)
-uistroke6.Thickness = 2
-uistroke6.Transparency = 0
-uistroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
-uistroke6.LineJoinMode = Enum.LineJoinMode.Round
-uistroke6.Enabled = true
+local bg6 = Instance.new('ImageLabel')
+bg6.Name = "bg"
+bg6.Parent = load4
+bg6.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+bg6.BackgroundTransparency = 0.15000000596046448
+bg6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+bg6.BorderSizePixel = 0
+bg6.Position = UDim2.new(0, 0, 0, 0)
+bg6.Size = UDim2.new(1, 0, 1, 0)
+bg6.Visible = true
+bg6.ZIndex = 0
+bg6.Active = false
+bg6.Selectable = false
+bg6.LayoutOrder = 0
+bg6.ScaleType = Enum.ScaleType.Crop
+bg6.Image = "rbxassetid://13224588218"
+bg6.ImageColor3 = Color3.fromRGB(255, 255, 255)
+bg6.ImageTransparency = 0.5
+bg6.ImageRectOffset = Vector2.new(0, 0)
+bg6.ImageRectSize = Vector2.new(0, 0)
+bg6.SliceCenter = Rect.new(0, 0, 0, 0)
+bg6.SliceScale = 1
+bg6.ClipsDescendants = false
+bg6.Rotation = 0
+bg6.AnchorPoint = Vector2.new(0, 0)
+bg6.Transparency = 0.15000000596046448
 
-local uistroke17 = Instance.new('UIStroke')
-uistroke17.Name = "UIStroke1"
-uistroke17.Parent = title5
-uistroke17.ZIndex = 1
-uistroke17.Color = Color3.fromRGB(255, 255, 255)
-uistroke17.Thickness = 2
-uistroke17.Transparency = 0.25
-uistroke17.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-uistroke17.LineJoinMode = Enum.LineJoinMode.Round
-uistroke17.Enabled = true
+local folder7 = Instance.new('Folder')
+folder7.Name = "Folder"
+folder7.Parent = load4
 
-local stuff8 = Instance.new('ScrollingFrame')
-stuff8.Name = "stuff"
-stuff8.Parent = container2
-stuff8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-stuff8.BackgroundTransparency = 1
-stuff8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-stuff8.BorderSizePixel = 0
-stuff8.Position = UDim2.new(0, 0, 0.2000003606081009, 0)
-stuff8.Size = UDim2.new(1, 0, 0.7999996542930603, 0)
-stuff8.Visible = true
-stuff8.ZIndex = 2
-stuff8.Active = true
-stuff8.Selectable = true
-stuff8.LayoutOrder = 0
-stuff8.ClipsDescendants = true
-stuff8.CanvasSize = UDim2.new(0, 0, 0, 0)
-stuff8.CanvasPosition = Vector2.new(0, 0)
-stuff8.ScrollBarThickness = 8
-stuff8.ScrollBarImageColor3 = Color3.fromRGB(255, 255, 255)
-stuff8.ScrollBarImageTransparency = 0
-stuff8.Rotation = 0
-stuff8.AnchorPoint = Vector2.new(0, 0)
-stuff8.Transparency = 1
+local uilistlayout8 = Instance.new('UIListLayout')
+uilistlayout8.Name = "UIListLayout"
+uilistlayout8.Parent = folder7
+uilistlayout8.FillDirection = Enum.FillDirection.Vertical
+uilistlayout8.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uilistlayout8.VerticalAlignment = Enum.VerticalAlignment.Center
+uilistlayout8.SortOrder = Enum.SortOrder.LayoutOrder
+uilistlayout8.Padding = UDim.new(0, 0)
 
-local uilistlayout9 = Instance.new('UIListLayout')
-uilistlayout9.Name = "UIListLayout"
-uilistlayout9.Parent = stuff8
-uilistlayout9.FillDirection = Enum.FillDirection.Vertical
-uilistlayout9.HorizontalAlignment = Enum.HorizontalAlignment.Center
-uilistlayout9.VerticalAlignment = Enum.VerticalAlignment.Top
-uilistlayout9.SortOrder = Enum.SortOrder.LayoutOrder
-uilistlayout9.Padding = UDim.new(0, 15)
+local label9 = Instance.new('TextLabel')
+label9.Name = "label"
+label9.Parent = folder7
+label9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+label9.BackgroundTransparency = 1
+label9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+label9.BorderSizePixel = 0
+label9.Position = UDim2.new(0, 0, 0.22159090638160706, 0)
+label9.Size = UDim2.new(1, 0, 0.3863636255264282, 0)
+label9.Visible = true
+label9.ZIndex = 1
+label9.Font = Enum.Font.Unknown
+label9.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Medium, Enum.FontStyle.Normal)
+label9.Text = "boiii loading"
+label9.TextColor3 = Color3.fromRGB(255, 255, 255)
+label9.TextScaled = true
+label9.TextSize = 14
+label9.TextTransparency = 0
+label9.TextWrapped = true
+label9.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+label9.TextStrokeTransparency = 0
+label9.TextXAlignment = Enum.TextXAlignment.Center
+label9.TextYAlignment = Enum.TextYAlignment.Center
+label9.RichText = true
+label9.Active = false
+label9.Selectable = false
+label9.LayoutOrder = 0
+label9.ClipsDescendants = false
+label9.Rotation = 0
+label9.AnchorPoint = Vector2.new(0, 0)
+label9.Transparency = 1
 
-local infstam10 = Instance.new('TextButton')
-infstam10.Name = "infstam"
-infstam10.Parent = stuff8
-infstam10.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-infstam10.BackgroundTransparency = 0.5
-infstam10.BorderColor3 = Color3.fromRGB(0, 0, 0)
-infstam10.BorderSizePixel = 0
-infstam10.Position = UDim2.new(0, 0, 3.589796335745632e-07, 0)
-infstam10.Size = UDim2.new(1, 0, 0.16475313901901245, 0)
-infstam10.Visible = true
-infstam10.ZIndex = 1
-infstam10.AutoButtonColor = true
-infstam10.Font = Enum.Font.ArialBold
-infstam10.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-infstam10.Text = "infinite stamina (off)"
-infstam10.TextColor3 = Color3.fromRGB(255, 255, 255)
-infstam10.TextScaled = true
-infstam10.TextSize = 8
-infstam10.TextTransparency = 0
-infstam10.TextWrapped = true
-infstam10.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-infstam10.TextStrokeTransparency = 1
-infstam10.TextXAlignment = Enum.TextXAlignment.Center
-infstam10.TextYAlignment = Enum.TextYAlignment.Center
-infstam10.RichText = false
-infstam10.Active = true
-infstam10.Selectable = true
-infstam10.LayoutOrder = 0
-infstam10.ClipsDescendants = false
-infstam10.Rotation = 0
-infstam10.AnchorPoint = Vector2.new(0, 0)
-infstam10.Transparency = 0.5
-infstam10.Style = Enum.ButtonStyle.Custom
+local uistroke10 = Instance.new('UIStroke')
+uistroke10.Name = "UIStroke"
+uistroke10.Parent = label9
+uistroke10.ZIndex = 1
+uistroke10.Color = Color3.fromRGB(0, 0, 0)
+uistroke10.Thickness = 2
+uistroke10.Transparency = 0
+uistroke10.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke10.LineJoinMode = Enum.LineJoinMode.Round
+uistroke10.Enabled = true
 
-local uistroke11 = Instance.new('UIStroke')
-uistroke11.Name = "UIStroke"
-uistroke11.Parent = infstam10
-uistroke11.ZIndex = 1
-uistroke11.Color = Color3.fromRGB(255, 255, 255)
-uistroke11.Thickness = 2
-uistroke11.Transparency = 0.25
-uistroke11.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-uistroke11.LineJoinMode = Enum.LineJoinMode.Round
-uistroke11.Enabled = true
+local bar11 = Instance.new('Frame')
+bar11.Name = "bar"
+bar11.Parent = folder7
+bar11.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+bar11.BackgroundTransparency = 0
+bar11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+bar11.BorderSizePixel = 0
+bar11.Position = UDim2.new(0.05474217236042023, 0, 0.6069086194038391, 0)
+bar11.Size = UDim2.new(0.8905156850814819, 0, 0.3089100122451782, 0)
+bar11.Visible = true
+bar11.ZIndex = 1
+bar11.Active = false
+bar11.Selectable = false
+bar11.LayoutOrder = 0
+bar11.ClipsDescendants = false
+bar11.Rotation = 0
+bar11.AnchorPoint = Vector2.new(0, 0)
+bar11.Transparency = 0
+bar11.Style = Enum.FrameStyle.Custom
 
-local uistroke112 = Instance.new('UIStroke')
-uistroke112.Name = "UIStroke1"
-uistroke112.Parent = infstam10
-uistroke112.ZIndex = 1
-uistroke112.Color = Color3.fromRGB(0, 0, 0)
-uistroke112.Thickness = 2
-uistroke112.Transparency = 0
-uistroke112.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
-uistroke112.LineJoinMode = Enum.LineJoinMode.Round
-uistroke112.Enabled = true
+local uistroke12 = Instance.new('UIStroke')
+uistroke12.Name = "UIStroke"
+uistroke12.Parent = bar11
+uistroke12.ZIndex = 1
+uistroke12.Color = Color3.fromRGB(255, 255, 255)
+uistroke12.Thickness = 2
+uistroke12.Transparency = 0
+uistroke12.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke12.LineJoinMode = Enum.LineJoinMode.Miter
+uistroke12.Enabled = true
 
-local walkspeed13 = Instance.new('Frame')
-walkspeed13.Name = "walkspeed"
-walkspeed13.Parent = stuff8
-walkspeed13.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-walkspeed13.BackgroundTransparency = 0.5
-walkspeed13.BorderColor3 = Color3.fromRGB(0, 0, 0)
-walkspeed13.BorderSizePixel = 0
-walkspeed13.Position = UDim2.new(0, 0, 3.589796335745632e-07, 0)
-walkspeed13.Size = UDim2.new(1, 0, 0.33000001311302185, 0)
-walkspeed13.Visible = true
-walkspeed13.ZIndex = 1
-walkspeed13.Active = true
-walkspeed13.Selectable = true
-walkspeed13.LayoutOrder = 1
-walkspeed13.ClipsDescendants = false
-walkspeed13.Rotation = 0
-walkspeed13.AnchorPoint = Vector2.new(0, 0)
-walkspeed13.Transparency = 0.5
-walkspeed13.Style = Enum.FrameStyle.Custom
+local uilistlayout13 = Instance.new('UIListLayout')
+uilistlayout13.Name = "UIListLayout"
+uilistlayout13.Parent = bar11
+uilistlayout13.FillDirection = Enum.FillDirection.Vertical
+uilistlayout13.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uilistlayout13.VerticalAlignment = Enum.VerticalAlignment.Center
+uilistlayout13.SortOrder = Enum.SortOrder.LayoutOrder
+uilistlayout13.Padding = UDim.new(0, 0)
 
-local uistroke14 = Instance.new('UIStroke')
-uistroke14.Name = "UIStroke"
-uistroke14.Parent = walkspeed13
-uistroke14.ZIndex = 1
-uistroke14.Color = Color3.fromRGB(255, 255, 255)
-uistroke14.Thickness = 2
-uistroke14.Transparency = 0.25
-uistroke14.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-uistroke14.LineJoinMode = Enum.LineJoinMode.Round
-uistroke14.Enabled = true
+local fill14 = Instance.new('Frame')
+fill14.Name = "fill"
+fill14.Parent = bar11
+fill14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+fill14.BackgroundTransparency = 0
+fill14.BorderColor3 = Color3.fromRGB(0, 0, 0)
+fill14.BorderSizePixel = 0
+fill14.Position = UDim2.new(0.012889382429420948, 0, 0.12096191197633743, 0)
+fill14.Size = UDim2.new(0.9742211699485779, 0, 0.7580761909484863, 0)
+fill14.Visible = true
+fill14.ZIndex = 1
+fill14.Active = false
+fill14.Selectable = false
+fill14.LayoutOrder = 0
+fill14.ClipsDescendants = false
+fill14.Rotation = 0
+fill14.AnchorPoint = Vector2.new(0, 0)
+fill14.Transparency = 0
+fill14.Style = Enum.FrameStyle.Custom
 
-local uistroke115 = Instance.new('UIStroke')
-uistroke115.Name = "UIStroke1"
-uistroke115.Parent = walkspeed13
-uistroke115.ZIndex = 1
-uistroke115.Color = Color3.fromRGB(0, 0, 0)
-uistroke115.Thickness = 2
-uistroke115.Transparency = 0
-uistroke115.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
-uistroke115.LineJoinMode = Enum.LineJoinMode.Round
-uistroke115.Enabled = true
+local main15 = Instance.new('CanvasGroup')
+main15.Name = "main"
+main15.Parent = canvas2
+main15.BackgroundColor3 = Color3.fromRGB(25, 26, 31)
+main15.BackgroundTransparency = 0.10000000149011612
+main15.BorderColor3 = Color3.fromRGB(0, 0, 0)
+main15.BorderSizePixel = 0
+main15.Position = UDim2.new(0.16188903152942657, 0, 0.2860696613788605, 0)
+main15.Size = UDim2.new(0.7672154307365417, 0, 0.643034815788269, 0)
+main15.Visible = false
+main15.ZIndex = 1
+main15.Active = false
+main15.Selectable = false
+main15.LayoutOrder = 0
+main15.ClipsDescendants = false
+main15.Rotation = 0
+main15.AnchorPoint = Vector2.new(0, 0)
+main15.Transparency = 0.10000000149011612
 
-local button16 = Instance.new('TextButton')
-button16.Name = "button"
-button16.Parent = walkspeed13
-button16.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-button16.BackgroundTransparency = 0.5
-button16.BorderColor3 = Color3.fromRGB(0, 0, 0)
-button16.BorderSizePixel = 0
-button16.Position = UDim2.new(0, 0, 0.5527910590171814, 0)
-button16.Size = UDim2.new(1, 0, 0.44720861315727234, 0)
-button16.Visible = true
-button16.ZIndex = 1
-button16.AutoButtonColor = true
-button16.Font = Enum.Font.ArialBold
-button16.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-button16.Text = "confirm walkspeed"
-button16.TextColor3 = Color3.fromRGB(255, 255, 255)
-button16.TextScaled = true
-button16.TextSize = 8
-button16.TextTransparency = 0
-button16.TextWrapped = true
-button16.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-button16.TextStrokeTransparency = 1
-button16.TextXAlignment = Enum.TextXAlignment.Center
-button16.TextYAlignment = Enum.TextYAlignment.Center
-button16.RichText = false
-button16.Active = true
-button16.Selectable = true
-button16.LayoutOrder = 1
-button16.ClipsDescendants = false
-button16.Rotation = 0
-button16.AnchorPoint = Vector2.new(0, 0)
-button16.Transparency = 0.5
-button16.Style = Enum.ButtonStyle.Custom
+local uistroke16 = Instance.new('UIStroke')
+uistroke16.Name = "UIStroke"
+uistroke16.Parent = main15
+uistroke16.ZIndex = 1
+uistroke16.Color = Color3.fromRGB(255, 255, 255)
+uistroke16.Thickness = 4
+uistroke16.Transparency = 0
+uistroke16.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke16.LineJoinMode = Enum.LineJoinMode.Miter
+uistroke16.Enabled = true
 
-local uistroke17 = Instance.new('UIStroke')
-uistroke17.Name = "UIStroke"
-uistroke17.Parent = button16
-uistroke17.ZIndex = 1
-uistroke17.Color = Color3.fromRGB(255, 255, 255)
-uistroke17.Thickness = 2
-uistroke17.Transparency = 0.25
-uistroke17.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-uistroke17.LineJoinMode = Enum.LineJoinMode.Round
-uistroke17.Enabled = true
+local sidebar17 = Instance.new('Frame')
+sidebar17.Name = "sidebar"
+sidebar17.Parent = main15
+sidebar17.BackgroundColor3 = Color3.fromRGB(179, 0, 255)
+sidebar17.BackgroundTransparency = 0.8500000238418579
+sidebar17.BorderColor3 = Color3.fromRGB(0, 0, 0)
+sidebar17.BorderSizePixel = 0
+sidebar17.Position = UDim2.new(0, 0, 0.09090909361839294, 0)
+sidebar17.Size = UDim2.new(0.07511609047651291, 0, 0.9090909361839294, 0)
+sidebar17.Visible = true
+sidebar17.ZIndex = 1
+sidebar17.Active = false
+sidebar17.Selectable = false
+sidebar17.LayoutOrder = 0
+sidebar17.ClipsDescendants = false
+sidebar17.Rotation = 0
+sidebar17.AnchorPoint = Vector2.new(0, 0)
+sidebar17.Transparency = 0.8500000238418579
+sidebar17.Style = Enum.FrameStyle.Custom
 
-local uistroke118 = Instance.new('UIStroke')
-uistroke118.Name = "UIStroke1"
-uistroke118.Parent = button16
-uistroke118.ZIndex = 1
-uistroke118.Color = Color3.fromRGB(0, 0, 0)
-uistroke118.Thickness = 2
-uistroke118.Transparency = 0
-uistroke118.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
-uistroke118.LineJoinMode = Enum.LineJoinMode.Round
-uistroke118.Enabled = true
+local uistroke18 = Instance.new('UIStroke')
+uistroke18.Name = "UIStroke"
+uistroke18.Parent = sidebar17
+uistroke18.ZIndex = 1
+uistroke18.Color = Color3.fromRGB(255, 255, 255)
+uistroke18.Thickness = 2
+uistroke18.Transparency = 0
+uistroke18.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke18.LineJoinMode = Enum.LineJoinMode.Miter
+uistroke18.Enabled = true
 
-local input19 = Instance.new('TextBox')
-input19.Name = "input"
-input19.Parent = walkspeed13
-input19.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-input19.BackgroundTransparency = 0.5
-input19.BorderColor3 = Color3.fromRGB(0, 0, 0)
-input19.BorderSizePixel = 0
-input19.Position = UDim2.new(0, 0, 0, 0)
-input19.Size = UDim2.new(1, 0, 0.5, 0)
-input19.Visible = true
-input19.ZIndex = 1
-input19.Font = Enum.Font.ArialBold
-input19.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-input19.Text = ""
-input19.TextColor3 = Color3.fromRGB(255, 255, 255)
-input19.TextScaled = true
-input19.TextSize = 8
-input19.TextTransparency = 0
-input19.TextWrapped = true
-input19.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-input19.TextStrokeTransparency = 1
-input19.TextXAlignment = Enum.TextXAlignment.Center
-input19.TextYAlignment = Enum.TextYAlignment.Center
-input19.RichText = false
-input19.PlaceholderText = "walkspeed"
-input19.PlaceholderColor3 = Color3.fromRGB(128, 128, 128)
-input19.ClearTextOnFocus = true
-input19.MultiLine = false
-input19.Active = true
-input19.Selectable = true
-input19.LayoutOrder = 1
-input19.ClipsDescendants = false
-input19.Rotation = 0
-input19.AnchorPoint = Vector2.new(0, 0)
-input19.Transparency = 0.5
+local uilistlayout19 = Instance.new('UIListLayout')
+uilistlayout19.Name = "UIListLayout"
+uilistlayout19.Parent = sidebar17
+uilistlayout19.FillDirection = Enum.FillDirection.Vertical
+uilistlayout19.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uilistlayout19.VerticalAlignment = Enum.VerticalAlignment.Center
+uilistlayout19.SortOrder = Enum.SortOrder.LayoutOrder
+uilistlayout19.Padding = UDim.new(0, 20)
 
-local uistroke20 = Instance.new('UIStroke')
-uistroke20.Name = "UIStroke"
-uistroke20.Parent = input19
-uistroke20.ZIndex = 1
-uistroke20.Color = Color3.fromRGB(255, 255, 255)
-uistroke20.Thickness = 2
-uistroke20.Transparency = 0.25
-uistroke20.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-uistroke20.LineJoinMode = Enum.LineJoinMode.Round
-uistroke20.Enabled = true
+local home20 = Instance.new('ImageButton')
+home20.Name = "home"
+home20.Parent = sidebar17
+home20.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+home20.BackgroundTransparency = 0.5
+home20.BorderColor3 = Color3.fromRGB(0, 0, 0)
+home20.BorderSizePixel = 0
+home20.Position = UDim2.new(0.07032417505979538, 0, 0.457135409116745, 0)
+home20.Size = UDim2.new(0.7511606812477112, 0, 0.10015476495027542, 0)
+home20.Visible = true
+home20.ZIndex = 1
+home20.AutoButtonColor = true
+home20.Active = true
+home20.Selectable = true
+home20.LayoutOrder = 0
+home20.ScaleType = Enum.ScaleType.Fit
+home20.Image = "rbxassetid://5629023183"
+home20.ImageColor3 = Color3.fromRGB(255, 255, 255)
+home20.ImageTransparency = 0
+home20.ImageRectOffset = Vector2.new(0, 0)
+home20.ImageRectSize = Vector2.new(0, 0)
+home20.SliceCenter = Rect.new(0, 0, 0, 0)
+home20.SliceScale = 1
+home20.HoverImage = ""
+home20.PressedImage = ""
+home20.ClipsDescendants = false
+home20.Rotation = 0
+home20.AnchorPoint = Vector2.new(0, 0)
+home20.Transparency = 0.5
+home20.Style = Enum.ButtonStyle.Custom
 
-local uistroke121 = Instance.new('UIStroke')
-uistroke121.Name = "UIStroke1"
-uistroke121.Parent = input19
-uistroke121.ZIndex = 1
-uistroke121.Color = Color3.fromRGB(0, 0, 0)
-uistroke121.Thickness = 2
-uistroke121.Transparency = 0
-uistroke121.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
-uistroke121.LineJoinMode = Enum.LineJoinMode.Round
-uistroke121.Enabled = true
+local uicorner21 = Instance.new('UICorner')
+uicorner21.Name = "UICorner"
+uicorner21.Parent = home20
+uicorner21.CornerRadius = UDim.new(1, 0)
 
-local sprintspeed22 = Instance.new('Frame')
-sprintspeed22.Name = "sprintspeed"
-sprintspeed22.Parent = stuff8
-sprintspeed22.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-sprintspeed22.BackgroundTransparency = 0.5
-sprintspeed22.BorderColor3 = Color3.fromRGB(0, 0, 0)
-sprintspeed22.BorderSizePixel = 0
-sprintspeed22.Position = UDim2.new(0, 0, 3.589796335745632e-07, 0)
-sprintspeed22.Size = UDim2.new(1, 0, 0.33000001311302185, 0)
-sprintspeed22.Visible = true
-sprintspeed22.ZIndex = 1
-sprintspeed22.Active = true
-sprintspeed22.Selectable = true
-sprintspeed22.LayoutOrder = 2
-sprintspeed22.ClipsDescendants = false
-sprintspeed22.Rotation = 0
-sprintspeed22.AnchorPoint = Vector2.new(0, 0)
-sprintspeed22.Transparency = 0.5
-sprintspeed22.Style = Enum.FrameStyle.Custom
+local uistroke22 = Instance.new('UIStroke')
+uistroke22.Name = "UIStroke"
+uistroke22.Parent = home20
+uistroke22.ZIndex = 1
+uistroke22.Color = Color3.fromRGB(255, 255, 255)
+uistroke22.Thickness = 2
+uistroke22.Transparency = 0
+uistroke22.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke22.LineJoinMode = Enum.LineJoinMode.Round
+uistroke22.Enabled = true
 
-local uistroke23 = Instance.new('UIStroke')
-uistroke23.Name = "UIStroke"
-uistroke23.Parent = sprintspeed22
-uistroke23.ZIndex = 1
-uistroke23.Color = Color3.fromRGB(255, 255, 255)
-uistroke23.Thickness = 2
-uistroke23.Transparency = 0.25
-uistroke23.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-uistroke23.LineJoinMode = Enum.LineJoinMode.Round
-uistroke23.Enabled = true
+local uistroke123 = Instance.new('UIStroke')
+uistroke123.Name = "UIStroke1"
+uistroke123.Parent = home20
+uistroke123.ZIndex = 1
+uistroke123.Color = Color3.fromRGB(255, 255, 255)
+uistroke123.Thickness = 2
+uistroke123.Transparency = 0
+uistroke123.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke123.LineJoinMode = Enum.LineJoinMode.Round
+uistroke123.Enabled = true
 
-local uistroke124 = Instance.new('UIStroke')
-uistroke124.Name = "UIStroke1"
-uistroke124.Parent = sprintspeed22
-uistroke124.ZIndex = 1
-uistroke124.Color = Color3.fromRGB(0, 0, 0)
-uistroke124.Thickness = 2
-uistroke124.Transparency = 0
-uistroke124.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
-uistroke124.LineJoinMode = Enum.LineJoinMode.Round
-uistroke124.Enabled = true
+local uiaspectratioconstraint24 = Instance.new('UIAspectRatioConstraint')
+uiaspectratioconstraint24.Name = "UIAspectRatioConstraint"
+uiaspectratioconstraint24.Parent = home20
 
-local button25 = Instance.new('TextButton')
-button25.Name = "button"
-button25.Parent = sprintspeed22
-button25.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-button25.BackgroundTransparency = 0.5
-button25.BorderColor3 = Color3.fromRGB(0, 0, 0)
-button25.BorderSizePixel = 0
-button25.Position = UDim2.new(0, 0, 0.5527910590171814, 0)
-button25.Size = UDim2.new(1, 0, 0.44720861315727234, 0)
-button25.Visible = true
-button25.ZIndex = 1
-button25.AutoButtonColor = true
-button25.Font = Enum.Font.ArialBold
-button25.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-button25.Text = "confirm sprintspeed"
-button25.TextColor3 = Color3.fromRGB(255, 255, 255)
-button25.TextScaled = true
-button25.TextSize = 8
-button25.TextTransparency = 0
-button25.TextWrapped = true
-button25.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-button25.TextStrokeTransparency = 1
-button25.TextXAlignment = Enum.TextXAlignment.Center
-button25.TextYAlignment = Enum.TextYAlignment.Center
-button25.RichText = false
-button25.Active = true
-button25.Selectable = true
-button25.LayoutOrder = 1
-button25.ClipsDescendants = false
-button25.Rotation = 0
-button25.AnchorPoint = Vector2.new(0, 0)
-button25.Transparency = 0.5
-button25.Style = Enum.ButtonStyle.Custom
+local hint25 = Instance.new('Folder')
+hint25.Name = "hint"
+hint25.Parent = home20
 
-local uistroke26 = Instance.new('UIStroke')
-uistroke26.Name = "UIStroke"
-uistroke26.Parent = button25
-uistroke26.ZIndex = 1
-uistroke26.Color = Color3.fromRGB(255, 255, 255)
-uistroke26.Thickness = 2
-uistroke26.Transparency = 0.25
-uistroke26.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-uistroke26.LineJoinMode = Enum.LineJoinMode.Round
-uistroke26.Enabled = true
+local uilistlayout26 = Instance.new('UIListLayout')
+uilistlayout26.Name = "UIListLayout"
+uilistlayout26.Parent = hint25
+uilistlayout26.FillDirection = Enum.FillDirection.Horizontal
+uilistlayout26.HorizontalAlignment = Enum.HorizontalAlignment.Left
+uilistlayout26.VerticalAlignment = Enum.VerticalAlignment.Center
+uilistlayout26.SortOrder = Enum.SortOrder.LayoutOrder
+uilistlayout26.Padding = UDim.new(0, 0)
 
-local uistroke127 = Instance.new('UIStroke')
-uistroke127.Name = "UIStroke1"
-uistroke127.Parent = button25
-uistroke127.ZIndex = 1
-uistroke127.Color = Color3.fromRGB(0, 0, 0)
-uistroke127.Thickness = 2
-uistroke127.Transparency = 0
-uistroke127.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
-uistroke127.LineJoinMode = Enum.LineJoinMode.Round
-uistroke127.Enabled = true
+local frame27 = Instance.new('Frame')
+frame27.Name = "Frame"
+frame27.Parent = hint25
+frame27.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+frame27.BackgroundTransparency = 0
+frame27.BorderColor3 = Color3.fromRGB(0, 0, 0)
+frame27.BorderSizePixel = 0
+frame27.Position = UDim2.new(0, 0, 0, 0)
+frame27.Size = UDim2.new(1.350000023841858, 0, 0, 0)
+frame27.Visible = true
+frame27.ZIndex = 1
+frame27.Active = false
+frame27.Selectable = false
+frame27.LayoutOrder = 0
+frame27.ClipsDescendants = false
+frame27.Rotation = 0
+frame27.AnchorPoint = Vector2.new(0, 0)
+frame27.Transparency = 0
+frame27.Style = Enum.FrameStyle.Custom
 
-local input28 = Instance.new('TextBox')
-input28.Name = "input"
-input28.Parent = sprintspeed22
-input28.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-input28.BackgroundTransparency = 0.5
-input28.BorderColor3 = Color3.fromRGB(0, 0, 0)
-input28.BorderSizePixel = 0
-input28.Position = UDim2.new(0, 0, 0, 0)
-input28.Size = UDim2.new(1, 0, 0.5, 0)
-input28.Visible = true
-input28.ZIndex = 1
-input28.Font = Enum.Font.ArialBold
-input28.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-input28.Text = ""
-input28.TextColor3 = Color3.fromRGB(255, 255, 255)
-input28.TextScaled = true
-input28.TextSize = 8
-input28.TextTransparency = 0
-input28.TextWrapped = true
-input28.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-input28.TextStrokeTransparency = 1
-input28.TextXAlignment = Enum.TextXAlignment.Center
-input28.TextYAlignment = Enum.TextYAlignment.Center
-input28.RichText = false
-input28.PlaceholderText = "sprintspeed"
-input28.PlaceholderColor3 = Color3.fromRGB(128, 128, 128)
-input28.ClearTextOnFocus = true
-input28.MultiLine = false
-input28.Active = true
-input28.Selectable = true
-input28.LayoutOrder = 1
-input28.ClipsDescendants = false
-input28.Rotation = 0
-input28.AnchorPoint = Vector2.new(0, 0)
-input28.Transparency = 0.5
+local label28 = Instance.new('TextLabel')
+label28.Name = "label"
+label28.Parent = hint25
+label28.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+label28.BackgroundTransparency = 1
+label28.BorderColor3 = Color3.fromRGB(0, 0, 0)
+label28.BorderSizePixel = 0
+label28.Position = UDim2.new(-0.7846959829330444, 0, -0.6160158514976501, 0)
+label28.Size = UDim2.new(2.569391965866089, 0, 0.3660159707069397, 0)
+label28.Visible = true
+label28.ZIndex = 1
+label28.Font = Enum.Font.Arial
+label28.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+label28.Text = "<  Label"
+label28.TextColor3 = Color3.fromRGB(255, 255, 255)
+label28.TextScaled = true
+label28.TextSize = 14
+label28.TextTransparency = 0
+label28.TextWrapped = true
+label28.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+label28.TextStrokeTransparency = 0
+label28.TextXAlignment = Enum.TextXAlignment.Left
+label28.TextYAlignment = Enum.TextYAlignment.Center
+label28.RichText = false
+label28.Active = false
+label28.Selectable = false
+label28.LayoutOrder = 67
+label28.ClipsDescendants = false
+label28.Rotation = 0
+label28.AnchorPoint = Vector2.new(0, 0)
+label28.Transparency = 1
 
 local uistroke29 = Instance.new('UIStroke')
 uistroke29.Name = "UIStroke"
-uistroke29.Parent = input28
+uistroke29.Parent = label28
 uistroke29.ZIndex = 1
-uistroke29.Color = Color3.fromRGB(255, 255, 255)
+uistroke29.Color = Color3.fromRGB(0, 0, 0)
 uistroke29.Thickness = 2
-uistroke29.Transparency = 0.25
-uistroke29.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke29.Transparency = 0
+uistroke29.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
 uistroke29.LineJoinMode = Enum.LineJoinMode.Round
 uistroke29.Enabled = true
 
-local uistroke130 = Instance.new('UIStroke')
-uistroke130.Name = "UIStroke1"
-uistroke130.Parent = input28
-uistroke130.ZIndex = 1
-uistroke130.Color = Color3.fromRGB(0, 0, 0)
-uistroke130.Thickness = 2
-uistroke130.Transparency = 0
-uistroke130.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
-uistroke130.LineJoinMode = Enum.LineJoinMode.Round
-uistroke130.Enabled = true
+local game30 = Instance.new('ImageButton')
+game30.Name = "game"
+game30.Parent = sidebar17
+game30.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+game30.BackgroundTransparency = 0.5
+game30.BorderColor3 = Color3.fromRGB(0, 0, 0)
+game30.BorderSizePixel = 0
+game30.Position = UDim2.new(0.07032417505979538, 0, 0.457135409116745, 0)
+game30.Size = UDim2.new(0.7511606812477112, 0, 0.10015476495027542, 0)
+game30.Visible = true
+game30.ZIndex = 1
+game30.AutoButtonColor = true
+game30.Active = true
+game30.Selectable = true
+game30.LayoutOrder = 1
+game30.ScaleType = Enum.ScaleType.Fit
+game30.Image = "rbxassetid://8508980527"
+game30.ImageColor3 = Color3.fromRGB(255, 255, 255)
+game30.ImageTransparency = 0
+game30.ImageRectOffset = Vector2.new(0, 0)
+game30.ImageRectSize = Vector2.new(0, 0)
+game30.SliceCenter = Rect.new(0, 0, 0, 0)
+game30.SliceScale = 1
+game30.HoverImage = ""
+game30.PressedImage = ""
+game30.ClipsDescendants = false
+game30.Rotation = 0
+game30.AnchorPoint = Vector2.new(0, 0)
+game30.Transparency = 0.5
+game30.Style = Enum.ButtonStyle.Custom
 
-local uilistlayout31 = Instance.new('UIListLayout')
-uilistlayout31.Name = "UIListLayout"
-uilistlayout31.Parent = skibidi1
-uilistlayout31.FillDirection = Enum.FillDirection.Horizontal
-uilistlayout31.HorizontalAlignment = Enum.HorizontalAlignment.Right
-uilistlayout31.VerticalAlignment = Enum.VerticalAlignment.Center
-uilistlayout31.SortOrder = Enum.SortOrder.LayoutOrder
-uilistlayout31.Padding = UDim.new(0, 5)
+local uicorner31 = Instance.new('UICorner')
+uicorner31.Name = "UICorner"
+uicorner31.Parent = game30
+uicorner31.CornerRadius = UDim.new(1, 0)
 
-local sep32 = Instance.new('Frame')
-sep32.Name = "sep"
-sep32.Parent = skibidi1
-sep32.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-sep32.BackgroundTransparency = 0
-sep32.BorderColor3 = Color3.fromRGB(0, 0, 0)
-sep32.BorderSizePixel = 0
-sep32.Position = UDim2.new(0, 0, 0, 0)
-sep32.Size = UDim2.new(0, 0, 1, 0)
-sep32.Visible = true
-sep32.ZIndex = 1
-sep32.Active = false
-sep32.Selectable = false
-sep32.LayoutOrder = 6767767
-sep32.ClipsDescendants = false
-sep32.Rotation = 0
-sep32.AnchorPoint = Vector2.new(0, 0)
-sep32.Transparency = 0
-sep32.Style = Enum.FrameStyle.Custom
+local uistroke32 = Instance.new('UIStroke')
+uistroke32.Name = "UIStroke"
+uistroke32.Parent = game30
+uistroke32.ZIndex = 1
+uistroke32.Color = Color3.fromRGB(255, 255, 255)
+uistroke32.Thickness = 2
+uistroke32.Transparency = 0
+uistroke32.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke32.LineJoinMode = Enum.LineJoinMode.Round
+uistroke32.Enabled = true
 
-local toggle33 = Instance.new('Frame')
-toggle33.Name = "toggle"
-toggle33.Parent = skibidi1
-toggle33.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-toggle33.BackgroundTransparency = 1
-toggle33.BorderColor3 = Color3.fromRGB(0, 0, 0)
-toggle33.BorderSizePixel = 0
-toggle33.Position = UDim2.new(0.6740947365760803, 0, 0.39399999380111694, 0)
-toggle33.Size = UDim2.new(0.02599814347922802, 0, 0.21199999749660492, 0)
-toggle33.Visible = true
-toggle33.ZIndex = 1
-toggle33.Active = true
-toggle33.Selectable = true
-toggle33.LayoutOrder = -2
-toggle33.ClipsDescendants = false
-toggle33.Rotation = 0
-toggle33.AnchorPoint = Vector2.new(0, 0)
-toggle33.Transparency = 1
-toggle33.Style = Enum.FrameStyle.Custom
+local uistroke133 = Instance.new('UIStroke')
+uistroke133.Name = "UIStroke1"
+uistroke133.Parent = game30
+uistroke133.ZIndex = 1
+uistroke133.Color = Color3.fromRGB(255, 255, 255)
+uistroke133.Thickness = 2
+uistroke133.Transparency = 0
+uistroke133.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke133.LineJoinMode = Enum.LineJoinMode.Round
+uistroke133.Enabled = true
 
-local button34 = Instance.new('TextButton')
-button34.Name = "button"
-button34.Parent = toggle33
-button34.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-button34.BackgroundTransparency = 0.5
-button34.BorderColor3 = Color3.fromRGB(0, 0, 0)
-button34.BorderSizePixel = 0
-button34.Position = UDim2.new(0, 0, 3.589796335745632e-07, 0)
-button34.Size = UDim2.new(1, 0, 0.16475313901901245, 0)
-button34.Visible = true
-button34.ZIndex = 1
-button34.AutoButtonColor = true
-button34.Font = Enum.Font.ArialBold
-button34.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-button34.Text = ">"
-button34.TextColor3 = Color3.fromRGB(255, 255, 255)
-button34.TextScaled = true
-button34.TextSize = 8
-button34.TextTransparency = 0
-button34.TextWrapped = true
-button34.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-button34.TextStrokeTransparency = 1
-button34.TextXAlignment = Enum.TextXAlignment.Center
-button34.TextYAlignment = Enum.TextYAlignment.Center
-button34.RichText = false
-button34.Active = true
-button34.Selectable = true
-button34.LayoutOrder = 0
-button34.ClipsDescendants = false
-button34.Rotation = 0
-button34.AnchorPoint = Vector2.new(0, 0)
-button34.Transparency = 0.5
-button34.Style = Enum.ButtonStyle.Custom
+local uiaspectratioconstraint34 = Instance.new('UIAspectRatioConstraint')
+uiaspectratioconstraint34.Name = "UIAspectRatioConstraint"
+uiaspectratioconstraint34.Parent = game30
 
-local uistroke35 = Instance.new('UIStroke')
-uistroke35.Name = "UIStroke"
-uistroke35.Parent = button34
-uistroke35.ZIndex = 1
-uistroke35.Color = Color3.fromRGB(255, 255, 255)
-uistroke35.Thickness = 2
-uistroke35.Transparency = 0.25
-uistroke35.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-uistroke35.LineJoinMode = Enum.LineJoinMode.Round
-uistroke35.Enabled = true
+local hint35 = Instance.new('Folder')
+hint35.Name = "hint"
+hint35.Parent = game30
 
-local uistroke136 = Instance.new('UIStroke')
-uistroke136.Name = "UIStroke1"
-uistroke136.Parent = button34
-uistroke136.ZIndex = 1
-uistroke136.Color = Color3.fromRGB(0, 0, 0)
-uistroke136.Thickness = 2
-uistroke136.Transparency = 0
-uistroke136.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
-uistroke136.LineJoinMode = Enum.LineJoinMode.Round
-uistroke136.Enabled = true
+local uilistlayout36 = Instance.new('UIListLayout')
+uilistlayout36.Name = "UIListLayout"
+uilistlayout36.Parent = hint35
+uilistlayout36.FillDirection = Enum.FillDirection.Horizontal
+uilistlayout36.HorizontalAlignment = Enum.HorizontalAlignment.Left
+uilistlayout36.VerticalAlignment = Enum.VerticalAlignment.Center
+uilistlayout36.SortOrder = Enum.SortOrder.LayoutOrder
+uilistlayout36.Padding = UDim.new(0, 0)
 
-local vals37 = Instance.new('Folder')
-vals37.Name = "vals"
-vals37.Parent = skibidi1
+local frame37 = Instance.new('Frame')
+frame37.Name = "Frame"
+frame37.Parent = hint35
+frame37.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+frame37.BackgroundTransparency = 0
+frame37.BorderColor3 = Color3.fromRGB(0, 0, 0)
+frame37.BorderSizePixel = 0
+frame37.Position = UDim2.new(0, 0, 0, 0)
+frame37.Size = UDim2.new(1.350000023841858, 0, 0, 0)
+frame37.Visible = true
+frame37.ZIndex = 1
+frame37.Active = false
+frame37.Selectable = false
+frame37.LayoutOrder = 0
+frame37.ClipsDescendants = false
+frame37.Rotation = 0
+frame37.AnchorPoint = Vector2.new(0, 0)
+frame37.Transparency = 0
+frame37.Style = Enum.FrameStyle.Custom
 
-local infstam38 = Instance.new('BoolValue')
-infstam38.Name = "infstam"
-infstam38.Parent = vals37
-infstam38.Value = false
+local label38 = Instance.new('TextLabel')
+label38.Name = "label"
+label38.Parent = hint35
+label38.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+label38.BackgroundTransparency = 1
+label38.BorderColor3 = Color3.fromRGB(0, 0, 0)
+label38.BorderSizePixel = 0
+label38.Position = UDim2.new(-0.7846959829330444, 0, -0.6160158514976501, 0)
+label38.Size = UDim2.new(2.569391965866089, 0, 0.3660159707069397, 0)
+label38.Visible = true
+label38.ZIndex = 1
+label38.Font = Enum.Font.Arial
+label38.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+label38.Text = "<  Label"
+label38.TextColor3 = Color3.fromRGB(255, 255, 255)
+label38.TextScaled = true
+label38.TextSize = 14
+label38.TextTransparency = 0
+label38.TextWrapped = true
+label38.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+label38.TextStrokeTransparency = 0
+label38.TextXAlignment = Enum.TextXAlignment.Left
+label38.TextYAlignment = Enum.TextYAlignment.Center
+label38.RichText = false
+label38.Active = false
+label38.Selectable = false
+label38.LayoutOrder = 67
+label38.ClipsDescendants = false
+label38.Rotation = 0
+label38.AnchorPoint = Vector2.new(0, 0)
+label38.Transparency = 1
 
-local walkspeed39 = Instance.new('NumberValue')
-walkspeed39.Name = "walkspeed"
-walkspeed39.Parent = vals37
-walkspeed39.Value = 10
+local uistroke39 = Instance.new('UIStroke')
+uistroke39.Name = "UIStroke"
+uistroke39.Parent = label38
+uistroke39.ZIndex = 1
+uistroke39.Color = Color3.fromRGB(0, 0, 0)
+uistroke39.Thickness = 2
+uistroke39.Transparency = 0
+uistroke39.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke39.LineJoinMode = Enum.LineJoinMode.Round
+uistroke39.Enabled = true
 
-local sprintspeed40 = Instance.new('NumberValue')
-sprintspeed40.Name = "sprintspeed"
-sprintspeed40.Parent = vals37
-sprintspeed40.Value = 26
+local pages40 = Instance.new('Frame')
+pages40.Name = "pages"
+pages40.Parent = main15
+pages40.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+pages40.BackgroundTransparency = 1
+pages40.BorderColor3 = Color3.fromRGB(0, 0, 0)
+pages40.BorderSizePixel = 0
+pages40.Position = UDim2.new(0.07503409683704376, 0, 0.09090909361839294, 0)
+pages40.Size = UDim2.new(0.9249659180641174, 0, 0.9090909361839294, 0)
+pages40.Visible = true
+pages40.ZIndex = 0
+pages40.Active = false
+pages40.Selectable = false
+pages40.LayoutOrder = 0
+pages40.ClipsDescendants = false
+pages40.Rotation = 0
+pages40.AnchorPoint = Vector2.new(0, 0)
+pages40.Transparency = 1
+pages40.Style = Enum.FrameStyle.Custom
+
+local home41 = Instance.new('Frame')
+home41.Name = "home"
+home41.Parent = pages40
+home41.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+home41.BackgroundTransparency = 1
+home41.BorderColor3 = Color3.fromRGB(0, 0, 0)
+home41.BorderSizePixel = 0
+home41.Position = UDim2.new(0, 0, 0, 0)
+home41.Size = UDim2.new(1, 0, 1, 0)
+home41.Visible = false
+home41.ZIndex = 1
+home41.Active = false
+home41.Selectable = false
+home41.LayoutOrder = 0
+home41.ClipsDescendants = false
+home41.Rotation = 0
+home41.AnchorPoint = Vector2.new(0, 0)
+home41.Transparency = 1
+home41.Style = Enum.FrameStyle.Custom
+
+local imagelabel42 = Instance.new('ImageLabel')
+imagelabel42.Name = "ImageLabel"
+imagelabel42.Parent = home41
+imagelabel42.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+imagelabel42.BackgroundTransparency = 1
+imagelabel42.BorderColor3 = Color3.fromRGB(0, 0, 0)
+imagelabel42.BorderSizePixel = 0
+imagelabel42.Position = UDim2.new(0, 0, 0, 0)
+imagelabel42.Size = UDim2.new(1, 0, 1, 0)
+imagelabel42.Visible = true
+imagelabel42.ZIndex = 1
+imagelabel42.Active = false
+imagelabel42.Selectable = false
+imagelabel42.LayoutOrder = 0
+imagelabel42.ScaleType = Enum.ScaleType.Crop
+imagelabel42.Image = "rbxassetid://119643652325186"
+imagelabel42.ImageColor3 = Color3.fromRGB(255, 255, 255)
+imagelabel42.ImageTransparency = 0
+imagelabel42.ImageRectOffset = Vector2.new(0, 0)
+imagelabel42.ImageRectSize = Vector2.new(0, 0)
+imagelabel42.SliceCenter = Rect.new(0, 0, 0, 0)
+imagelabel42.SliceScale = 1
+imagelabel42.ClipsDescendants = false
+imagelabel42.Rotation = 0
+imagelabel42.AnchorPoint = Vector2.new(0, 0)
+imagelabel42.Transparency = 1
+
+local uistroke43 = Instance.new('UIStroke')
+uistroke43.Name = "UIStroke"
+uistroke43.Parent = pages40
+uistroke43.ZIndex = 1
+uistroke43.Color = Color3.fromRGB(255, 255, 255)
+uistroke43.Thickness = 2
+uistroke43.Transparency = 0
+uistroke43.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke43.LineJoinMode = Enum.LineJoinMode.Miter
+uistroke43.Enabled = true
+
+local game44 = Instance.new('Frame')
+game44.Name = "game"
+game44.Parent = pages40
+game44.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+game44.BackgroundTransparency = 1
+game44.BorderColor3 = Color3.fromRGB(0, 0, 0)
+game44.BorderSizePixel = 0
+game44.Position = UDim2.new(0, 0, 0, 0)
+game44.Size = UDim2.new(1, 0, 1, 0)
+game44.Visible = false
+game44.ZIndex = 1
+game44.Active = false
+game44.Selectable = false
+game44.LayoutOrder = 0
+game44.ClipsDescendants = false
+game44.Rotation = 0
+game44.AnchorPoint = Vector2.new(0, 0)
+game44.Transparency = 1
+game44.Style = Enum.FrameStyle.Custom
+
+local games45 = Instance.new('Folder')
+games45.Name = "games"
+games45.Parent = game44
+
+local 12364565867408046 = Instance.new('Frame')
+12364565867408046.Name = "123645658674080"
+12364565867408046.Parent = games45
+12364565867408046.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+12364565867408046.BackgroundTransparency = 1
+12364565867408046.BorderColor3 = Color3.fromRGB(0, 0, 0)
+12364565867408046.BorderSizePixel = 0
+12364565867408046.Position = UDim2.new(0, 0, 0, 0)
+12364565867408046.Size = UDim2.new(1, 0, 1, 0)
+12364565867408046.Visible = false
+12364565867408046.ZIndex = 1
+12364565867408046.Active = false
+12364565867408046.Selectable = false
+12364565867408046.LayoutOrder = 0
+12364565867408046.ClipsDescendants = false
+12364565867408046.Rotation = 0
+12364565867408046.AnchorPoint = Vector2.new(0, 0)
+12364565867408046.Transparency = 1
+12364565867408046.Style = Enum.FrameStyle.Custom
+
+local stuff47 = Instance.new('ScrollingFrame')
+stuff47.Name = "stuff"
+stuff47.Parent = 12364565867408046
+stuff47.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+stuff47.BackgroundTransparency = 1
+stuff47.BorderColor3 = Color3.fromRGB(0, 0, 0)
+stuff47.BorderSizePixel = 0
+stuff47.Position = UDim2.new(0, 0, 0, 0)
+stuff47.Size = UDim2.new(1, 0, 1, 0)
+stuff47.Visible = true
+stuff47.ZIndex = 2
+stuff47.Active = true
+stuff47.Selectable = true
+stuff47.LayoutOrder = 0
+stuff47.ClipsDescendants = true
+stuff47.CanvasSize = UDim2.new(0, 0, 0, 0)
+stuff47.CanvasPosition = Vector2.new(0, 0)
+stuff47.ScrollBarThickness = 8
+stuff47.ScrollBarImageColor3 = Color3.fromRGB(255, 255, 255)
+stuff47.ScrollBarImageTransparency = 0
+stuff47.Rotation = 0
+stuff47.AnchorPoint = Vector2.new(0, 0)
+stuff47.Transparency = 1
+
+local uilistlayout48 = Instance.new('UIListLayout')
+uilistlayout48.Name = "UIListLayout"
+uilistlayout48.Parent = stuff47
+uilistlayout48.FillDirection = Enum.FillDirection.Vertical
+uilistlayout48.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uilistlayout48.VerticalAlignment = Enum.VerticalAlignment.Center
+uilistlayout48.SortOrder = Enum.SortOrder.LayoutOrder
+uilistlayout48.Padding = UDim.new(0, 15)
+
+local infstam49 = Instance.new('TextButton')
+infstam49.Name = "infstam"
+infstam49.Parent = stuff47
+infstam49.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+infstam49.BackgroundTransparency = 0.5
+infstam49.BorderColor3 = Color3.fromRGB(0, 0, 0)
+infstam49.BorderSizePixel = 0
+infstam49.Position = UDim2.new(0.010467217303812504, 0, 0.32496288418769836, 0)
+infstam49.Size = UDim2.new(0.9895327687263489, 0, 0.050940949469804764, 0)
+infstam49.Visible = true
+infstam49.ZIndex = 1
+infstam49.AutoButtonColor = true
+infstam49.Font = Enum.Font.ArialBold
+infstam49.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+infstam49.Text = "infinite stamina (off)"
+infstam49.TextColor3 = Color3.fromRGB(255, 255, 255)
+infstam49.TextScaled = true
+infstam49.TextSize = 8
+infstam49.TextTransparency = 0
+infstam49.TextWrapped = true
+infstam49.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+infstam49.TextStrokeTransparency = 1
+infstam49.TextXAlignment = Enum.TextXAlignment.Center
+infstam49.TextYAlignment = Enum.TextYAlignment.Center
+infstam49.RichText = false
+infstam49.Active = true
+infstam49.Selectable = true
+infstam49.LayoutOrder = 0
+infstam49.ClipsDescendants = false
+infstam49.Rotation = 0
+infstam49.AnchorPoint = Vector2.new(0, 0)
+infstam49.Transparency = 0.5
+infstam49.Style = Enum.ButtonStyle.Custom
+
+local uistroke50 = Instance.new('UIStroke')
+uistroke50.Name = "UIStroke"
+uistroke50.Parent = infstam49
+uistroke50.ZIndex = 1
+uistroke50.Color = Color3.fromRGB(255, 255, 255)
+uistroke50.Thickness = 2
+uistroke50.Transparency = 0.25
+uistroke50.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke50.LineJoinMode = Enum.LineJoinMode.Round
+uistroke50.Enabled = true
+
+local uistroke151 = Instance.new('UIStroke')
+uistroke151.Name = "UIStroke1"
+uistroke151.Parent = infstam49
+uistroke151.ZIndex = 1
+uistroke151.Color = Color3.fromRGB(0, 0, 0)
+uistroke151.Thickness = 2
+uistroke151.Transparency = 0
+uistroke151.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke151.LineJoinMode = Enum.LineJoinMode.Round
+uistroke151.Enabled = true
+
+local walkspeed52 = Instance.new('Frame')
+walkspeed52.Name = "walkspeed"
+walkspeed52.Parent = stuff47
+walkspeed52.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+walkspeed52.BackgroundTransparency = 0.5
+walkspeed52.BorderColor3 = Color3.fromRGB(0, 0, 0)
+walkspeed52.BorderSizePixel = 0
+walkspeed52.Position = UDim2.new(0.010467217303812504, 0, 0.41063812375068665, 0)
+walkspeed52.Size = UDim2.new(0.9895327687263489, 0, 0.10203441232442856, 0)
+walkspeed52.Visible = true
+walkspeed52.ZIndex = 1
+walkspeed52.Active = true
+walkspeed52.Selectable = true
+walkspeed52.LayoutOrder = 1
+walkspeed52.ClipsDescendants = false
+walkspeed52.Rotation = 0
+walkspeed52.AnchorPoint = Vector2.new(0, 0)
+walkspeed52.Transparency = 0.5
+walkspeed52.Style = Enum.FrameStyle.Custom
+
+local uistroke53 = Instance.new('UIStroke')
+uistroke53.Name = "UIStroke"
+uistroke53.Parent = walkspeed52
+uistroke53.ZIndex = 1
+uistroke53.Color = Color3.fromRGB(255, 255, 255)
+uistroke53.Thickness = 2
+uistroke53.Transparency = 0.25
+uistroke53.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke53.LineJoinMode = Enum.LineJoinMode.Round
+uistroke53.Enabled = true
+
+local uistroke154 = Instance.new('UIStroke')
+uistroke154.Name = "UIStroke1"
+uistroke154.Parent = walkspeed52
+uistroke154.ZIndex = 1
+uistroke154.Color = Color3.fromRGB(0, 0, 0)
+uistroke154.Thickness = 2
+uistroke154.Transparency = 0
+uistroke154.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke154.LineJoinMode = Enum.LineJoinMode.Round
+uistroke154.Enabled = true
+
+local button55 = Instance.new('TextButton')
+button55.Name = "button"
+button55.Parent = walkspeed52
+button55.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+button55.BackgroundTransparency = 0.5
+button55.BorderColor3 = Color3.fromRGB(0, 0, 0)
+button55.BorderSizePixel = 0
+button55.Position = UDim2.new(0, 0, 0.5527910590171814, 0)
+button55.Size = UDim2.new(1, 0, 0.44720861315727234, 0)
+button55.Visible = true
+button55.ZIndex = 1
+button55.AutoButtonColor = true
+button55.Font = Enum.Font.ArialBold
+button55.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+button55.Text = "confirm walkspeed"
+button55.TextColor3 = Color3.fromRGB(255, 255, 255)
+button55.TextScaled = true
+button55.TextSize = 8
+button55.TextTransparency = 0
+button55.TextWrapped = true
+button55.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+button55.TextStrokeTransparency = 1
+button55.TextXAlignment = Enum.TextXAlignment.Center
+button55.TextYAlignment = Enum.TextYAlignment.Center
+button55.RichText = false
+button55.Active = true
+button55.Selectable = true
+button55.LayoutOrder = 1
+button55.ClipsDescendants = false
+button55.Rotation = 0
+button55.AnchorPoint = Vector2.new(0, 0)
+button55.Transparency = 0.5
+button55.Style = Enum.ButtonStyle.Custom
+
+local uistroke56 = Instance.new('UIStroke')
+uistroke56.Name = "UIStroke"
+uistroke56.Parent = button55
+uistroke56.ZIndex = 1
+uistroke56.Color = Color3.fromRGB(255, 255, 255)
+uistroke56.Thickness = 2
+uistroke56.Transparency = 0.25
+uistroke56.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke56.LineJoinMode = Enum.LineJoinMode.Round
+uistroke56.Enabled = true
+
+local uistroke157 = Instance.new('UIStroke')
+uistroke157.Name = "UIStroke1"
+uistroke157.Parent = button55
+uistroke157.ZIndex = 1
+uistroke157.Color = Color3.fromRGB(0, 0, 0)
+uistroke157.Thickness = 2
+uistroke157.Transparency = 0
+uistroke157.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke157.LineJoinMode = Enum.LineJoinMode.Round
+uistroke157.Enabled = true
+
+local input58 = Instance.new('TextBox')
+input58.Name = "input"
+input58.Parent = walkspeed52
+input58.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+input58.BackgroundTransparency = 0.5
+input58.BorderColor3 = Color3.fromRGB(0, 0, 0)
+input58.BorderSizePixel = 0
+input58.Position = UDim2.new(0, 0, 0, 0)
+input58.Size = UDim2.new(1, 0, 0.5, 0)
+input58.Visible = true
+input58.ZIndex = 1
+input58.Font = Enum.Font.ArialBold
+input58.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+input58.Text = ""
+input58.TextColor3 = Color3.fromRGB(255, 255, 255)
+input58.TextScaled = true
+input58.TextSize = 8
+input58.TextTransparency = 0
+input58.TextWrapped = true
+input58.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+input58.TextStrokeTransparency = 1
+input58.TextXAlignment = Enum.TextXAlignment.Center
+input58.TextYAlignment = Enum.TextYAlignment.Center
+input58.RichText = false
+input58.PlaceholderText = "walkspeed"
+input58.PlaceholderColor3 = Color3.fromRGB(128, 128, 128)
+input58.ClearTextOnFocus = true
+input58.MultiLine = false
+input58.Active = true
+input58.Selectable = true
+input58.LayoutOrder = 1
+input58.ClipsDescendants = false
+input58.Rotation = 0
+input58.AnchorPoint = Vector2.new(0, 0)
+input58.Transparency = 0.5
+
+local uistroke59 = Instance.new('UIStroke')
+uistroke59.Name = "UIStroke"
+uistroke59.Parent = input58
+uistroke59.ZIndex = 1
+uistroke59.Color = Color3.fromRGB(255, 255, 255)
+uistroke59.Thickness = 2
+uistroke59.Transparency = 0.25
+uistroke59.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke59.LineJoinMode = Enum.LineJoinMode.Round
+uistroke59.Enabled = true
+
+local uistroke160 = Instance.new('UIStroke')
+uistroke160.Name = "UIStroke1"
+uistroke160.Parent = input58
+uistroke160.ZIndex = 1
+uistroke160.Color = Color3.fromRGB(0, 0, 0)
+uistroke160.Thickness = 2
+uistroke160.Transparency = 0
+uistroke160.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke160.LineJoinMode = Enum.LineJoinMode.Round
+uistroke160.Enabled = true
+
+local sprintspeed61 = Instance.new('Frame')
+sprintspeed61.Name = "sprintspeed"
+sprintspeed61.Parent = stuff47
+sprintspeed61.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+sprintspeed61.BackgroundTransparency = 0.5
+sprintspeed61.BorderColor3 = Color3.fromRGB(0, 0, 0)
+sprintspeed61.BorderSizePixel = 0
+sprintspeed61.Position = UDim2.new(0.010467217303812504, 0, 0.5474069714546204, 0)
+sprintspeed61.Size = UDim2.new(0.9895327687263489, 0, 0.10203444212675095, 0)
+sprintspeed61.Visible = true
+sprintspeed61.ZIndex = 1
+sprintspeed61.Active = true
+sprintspeed61.Selectable = true
+sprintspeed61.LayoutOrder = 2
+sprintspeed61.ClipsDescendants = false
+sprintspeed61.Rotation = 0
+sprintspeed61.AnchorPoint = Vector2.new(0, 0)
+sprintspeed61.Transparency = 0.5
+sprintspeed61.Style = Enum.FrameStyle.Custom
+
+local uistroke62 = Instance.new('UIStroke')
+uistroke62.Name = "UIStroke"
+uistroke62.Parent = sprintspeed61
+uistroke62.ZIndex = 1
+uistroke62.Color = Color3.fromRGB(255, 255, 255)
+uistroke62.Thickness = 2
+uistroke62.Transparency = 0.25
+uistroke62.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke62.LineJoinMode = Enum.LineJoinMode.Round
+uistroke62.Enabled = true
+
+local uistroke163 = Instance.new('UIStroke')
+uistroke163.Name = "UIStroke1"
+uistroke163.Parent = sprintspeed61
+uistroke163.ZIndex = 1
+uistroke163.Color = Color3.fromRGB(0, 0, 0)
+uistroke163.Thickness = 2
+uistroke163.Transparency = 0
+uistroke163.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke163.LineJoinMode = Enum.LineJoinMode.Round
+uistroke163.Enabled = true
+
+local button64 = Instance.new('TextButton')
+button64.Name = "button"
+button64.Parent = sprintspeed61
+button64.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+button64.BackgroundTransparency = 0.5
+button64.BorderColor3 = Color3.fromRGB(0, 0, 0)
+button64.BorderSizePixel = 0
+button64.Position = UDim2.new(0, 0, 0.5527910590171814, 0)
+button64.Size = UDim2.new(1, 0, 0.44720861315727234, 0)
+button64.Visible = true
+button64.ZIndex = 1
+button64.AutoButtonColor = true
+button64.Font = Enum.Font.ArialBold
+button64.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+button64.Text = "confirm sprintspeed"
+button64.TextColor3 = Color3.fromRGB(255, 255, 255)
+button64.TextScaled = true
+button64.TextSize = 8
+button64.TextTransparency = 0
+button64.TextWrapped = true
+button64.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+button64.TextStrokeTransparency = 1
+button64.TextXAlignment = Enum.TextXAlignment.Center
+button64.TextYAlignment = Enum.TextYAlignment.Center
+button64.RichText = false
+button64.Active = true
+button64.Selectable = true
+button64.LayoutOrder = 1
+button64.ClipsDescendants = false
+button64.Rotation = 0
+button64.AnchorPoint = Vector2.new(0, 0)
+button64.Transparency = 0.5
+button64.Style = Enum.ButtonStyle.Custom
+
+local uistroke65 = Instance.new('UIStroke')
+uistroke65.Name = "UIStroke"
+uistroke65.Parent = button64
+uistroke65.ZIndex = 1
+uistroke65.Color = Color3.fromRGB(255, 255, 255)
+uistroke65.Thickness = 2
+uistroke65.Transparency = 0.25
+uistroke65.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke65.LineJoinMode = Enum.LineJoinMode.Round
+uistroke65.Enabled = true
+
+local uistroke166 = Instance.new('UIStroke')
+uistroke166.Name = "UIStroke1"
+uistroke166.Parent = button64
+uistroke166.ZIndex = 1
+uistroke166.Color = Color3.fromRGB(0, 0, 0)
+uistroke166.Thickness = 2
+uistroke166.Transparency = 0
+uistroke166.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke166.LineJoinMode = Enum.LineJoinMode.Round
+uistroke166.Enabled = true
+
+local input67 = Instance.new('TextBox')
+input67.Name = "input"
+input67.Parent = sprintspeed61
+input67.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+input67.BackgroundTransparency = 0.5
+input67.BorderColor3 = Color3.fromRGB(0, 0, 0)
+input67.BorderSizePixel = 0
+input67.Position = UDim2.new(0, 0, 0, 0)
+input67.Size = UDim2.new(1, 0, 0.5, 0)
+input67.Visible = true
+input67.ZIndex = 1
+input67.Font = Enum.Font.ArialBold
+input67.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+input67.Text = ""
+input67.TextColor3 = Color3.fromRGB(255, 255, 255)
+input67.TextScaled = true
+input67.TextSize = 8
+input67.TextTransparency = 0
+input67.TextWrapped = true
+input67.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+input67.TextStrokeTransparency = 1
+input67.TextXAlignment = Enum.TextXAlignment.Center
+input67.TextYAlignment = Enum.TextYAlignment.Center
+input67.RichText = false
+input67.PlaceholderText = "sprintspeed"
+input67.PlaceholderColor3 = Color3.fromRGB(128, 128, 128)
+input67.ClearTextOnFocus = true
+input67.MultiLine = false
+input67.Active = true
+input67.Selectable = true
+input67.LayoutOrder = 1
+input67.ClipsDescendants = false
+input67.Rotation = 0
+input67.AnchorPoint = Vector2.new(0, 0)
+input67.Transparency = 0.5
+
+local uistroke68 = Instance.new('UIStroke')
+uistroke68.Name = "UIStroke"
+uistroke68.Parent = input67
+uistroke68.ZIndex = 1
+uistroke68.Color = Color3.fromRGB(255, 255, 255)
+uistroke68.Thickness = 2
+uistroke68.Transparency = 0.25
+uistroke68.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke68.LineJoinMode = Enum.LineJoinMode.Round
+uistroke68.Enabled = true
+
+local uistroke169 = Instance.new('UIStroke')
+uistroke169.Name = "UIStroke1"
+uistroke169.Parent = input67
+uistroke169.ZIndex = 1
+uistroke169.Color = Color3.fromRGB(0, 0, 0)
+uistroke169.Thickness = 2
+uistroke169.Transparency = 0
+uistroke169.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke169.LineJoinMode = Enum.LineJoinMode.Round
+uistroke169.Enabled = true
+
+local vals70 = Instance.new('Folder')
+vals70.Name = "vals"
+vals70.Parent = 12364565867408046
+
+local infstam71 = Instance.new('BoolValue')
+infstam71.Name = "infstam"
+infstam71.Parent = vals70
+infstam71.Value = false
+
+local walkspeed72 = Instance.new('NumberValue')
+walkspeed72.Name = "walkspeed"
+walkspeed72.Parent = vals70
+walkspeed72.Value = 10
+
+local sprintspeed73 = Instance.new('NumberValue')
+sprintspeed73.Name = "sprintspeed"
+sprintspeed73.Parent = vals70
+sprintspeed73.Value = 26
+
+local no74 = Instance.new('Frame')
+no74.Name = "no"
+no74.Parent = games45
+no74.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+no74.BackgroundTransparency = 1
+no74.BorderColor3 = Color3.fromRGB(0, 0, 0)
+no74.BorderSizePixel = 0
+no74.Position = UDim2.new(0, 0, 0, 0)
+no74.Size = UDim2.new(1, 0, 1, 0)
+no74.Visible = false
+no74.ZIndex = 1
+no74.Active = false
+no74.Selectable = false
+no74.LayoutOrder = 0
+no74.ClipsDescendants = false
+no74.Rotation = 0
+no74.AnchorPoint = Vector2.new(0, 0)
+no74.Transparency = 1
+no74.Style = Enum.FrameStyle.Custom
+
+local label75 = Instance.new('TextLabel')
+label75.Name = "label"
+label75.Parent = no74
+label75.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+label75.BackgroundTransparency = 1
+label75.BorderColor3 = Color3.fromRGB(0, 0, 0)
+label75.BorderSizePixel = 0
+label75.Position = UDim2.new(0.15439145267009735, 0, 0.4287261664867401, 0)
+label75.Size = UDim2.new(0.7160767316818237, 0, 0.08042323589324951, 0)
+label75.Visible = true
+label75.ZIndex = 1
+label75.Font = Enum.Font.Unknown
+label75.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Regular, Enum.FontStyle.Italic)
+label75.Text = "theres nothing for this game brotato"
+label75.TextColor3 = Color3.fromRGB(255, 255, 255)
+label75.TextScaled = true
+label75.TextSize = 14
+label75.TextTransparency = 0
+label75.TextWrapped = true
+label75.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+label75.TextStrokeTransparency = 0
+label75.TextXAlignment = Enum.TextXAlignment.Left
+label75.TextYAlignment = Enum.TextYAlignment.Center
+label75.RichText = true
+label75.Active = false
+label75.Selectable = false
+label75.LayoutOrder = 67
+label75.ClipsDescendants = false
+label75.Rotation = 0
+label75.AnchorPoint = Vector2.new(0, 0)
+label75.Transparency = 1
+
+local uistroke76 = Instance.new('UIStroke')
+uistroke76.Name = "UIStroke"
+uistroke76.Parent = label75
+uistroke76.ZIndex = 1
+uistroke76.Color = Color3.fromRGB(0, 0, 0)
+uistroke76.Thickness = 2
+uistroke76.Transparency = 0
+uistroke76.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke76.LineJoinMode = Enum.LineJoinMode.Round
+uistroke76.Enabled = true
+
+local uilistlayout77 = Instance.new('UIListLayout')
+uilistlayout77.Name = "UIListLayout"
+uilistlayout77.Parent = no74
+uilistlayout77.FillDirection = Enum.FillDirection.Vertical
+uilistlayout77.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uilistlayout77.VerticalAlignment = Enum.VerticalAlignment.Center
+uilistlayout77.SortOrder = Enum.SortOrder.LayoutOrder
+uilistlayout77.Padding = UDim.new(0, 0)
+
+local player78 = Instance.new('Frame')
+player78.Name = "player"
+player78.Parent = main15
+player78.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+player78.BackgroundTransparency = 0.5
+player78.BorderColor3 = Color3.fromRGB(0, 0, 0)
+player78.BorderSizePixel = 0
+player78.Position = UDim2.new(0, 0, 0, 0)
+player78.Size = UDim2.new(1, 0, 0.09000000357627869, 0)
+player78.Visible = true
+player78.ZIndex = 1
+player78.Active = false
+player78.Selectable = false
+player78.LayoutOrder = 0
+player78.ClipsDescendants = false
+player78.Rotation = 0
+player78.AnchorPoint = Vector2.new(0, 0)
+player78.Transparency = 0.5
+player78.Style = Enum.FrameStyle.Custom
+
+local uistroke79 = Instance.new('UIStroke')
+uistroke79.Name = "UIStroke"
+uistroke79.Parent = player78
+uistroke79.ZIndex = 1
+uistroke79.Color = Color3.fromRGB(255, 255, 255)
+uistroke79.Thickness = 4
+uistroke79.Transparency = 0
+uistroke79.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke79.LineJoinMode = Enum.LineJoinMode.Miter
+uistroke79.Enabled = true
+
+local bg80 = Instance.new('ImageLabel')
+bg80.Name = "bg"
+bg80.Parent = player78
+bg80.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bg80.BackgroundTransparency = 1
+bg80.BorderColor3 = Color3.fromRGB(0, 0, 0)
+bg80.BorderSizePixel = 0
+bg80.Position = UDim2.new(0, 0, 0, 0)
+bg80.Size = UDim2.new(1, 0, 1, 0)
+bg80.Visible = true
+bg80.ZIndex = 0
+bg80.Active = false
+bg80.Selectable = false
+bg80.LayoutOrder = 0
+bg80.ScaleType = Enum.ScaleType.Crop
+bg80.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+bg80.ImageColor3 = Color3.fromRGB(255, 255, 255)
+bg80.ImageTransparency = 0.25
+bg80.ImageRectOffset = Vector2.new(0, 0)
+bg80.ImageRectSize = Vector2.new(0, 0)
+bg80.SliceCenter = Rect.new(0, 0, 0, 0)
+bg80.SliceScale = 1
+bg80.ClipsDescendants = false
+bg80.Rotation = 0
+bg80.AnchorPoint = Vector2.new(0, 0)
+bg80.Transparency = 1
+
+local gamename81 = Instance.new('TextLabel')
+gamename81.Name = "gamename"
+gamename81.Parent = player78
+gamename81.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+gamename81.BackgroundTransparency = 1
+gamename81.BorderColor3 = Color3.fromRGB(0, 0, 0)
+gamename81.BorderSizePixel = 0
+gamename81.Position = UDim2.new(0.09890270233154297, 0, 0.08596603572368622, 0)
+gamename81.Size = UDim2.new(0.901097297668457, 0, 0.4999999701976776, 0)
+gamename81.Visible = true
+gamename81.ZIndex = 1
+gamename81.Font = Enum.Font.Unknown
+gamename81.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Regular, Enum.FontStyle.Italic)
+gamename81.Text = "skibidi toilet"
+gamename81.TextColor3 = Color3.fromRGB(255, 255, 255)
+gamename81.TextScaled = true
+gamename81.TextSize = 14
+gamename81.TextTransparency = 0
+gamename81.TextWrapped = true
+gamename81.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+gamename81.TextStrokeTransparency = 0
+gamename81.TextXAlignment = Enum.TextXAlignment.Left
+gamename81.TextYAlignment = Enum.TextYAlignment.Center
+gamename81.RichText = true
+gamename81.Active = false
+gamename81.Selectable = false
+gamename81.LayoutOrder = 67
+gamename81.ClipsDescendants = false
+gamename81.Rotation = 0
+gamename81.AnchorPoint = Vector2.new(0, 0)
+gamename81.Transparency = 1
+
+local uistroke82 = Instance.new('UIStroke')
+uistroke82.Name = "UIStroke"
+uistroke82.Parent = gamename81
+uistroke82.ZIndex = 1
+uistroke82.Color = Color3.fromRGB(0, 0, 0)
+uistroke82.Thickness = 2
+uistroke82.Transparency = 0
+uistroke82.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke82.LineJoinMode = Enum.LineJoinMode.Round
+uistroke82.Enabled = true
+
+local gameauthor83 = Instance.new('TextLabel')
+gameauthor83.Name = "gameauthor"
+gameauthor83.Parent = player78
+gameauthor83.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+gameauthor83.BackgroundTransparency = 1
+gameauthor83.BorderColor3 = Color3.fromRGB(0, 0, 0)
+gameauthor83.BorderSizePixel = 0
+gameauthor83.Position = UDim2.new(0.09890270233154297, 0, 0.5701697468757629, 0)
+gameauthor83.Size = UDim2.new(0.901097297668457, 0, 0.3653556704521179, 0)
+gameauthor83.Visible = true
+gameauthor83.ZIndex = 1
+gameauthor83.Font = Enum.Font.Arial
+gameauthor83.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+gameauthor83.Text = "skibidi toilet"
+gameauthor83.TextColor3 = Color3.fromRGB(255, 255, 255)
+gameauthor83.TextScaled = true
+gameauthor83.TextSize = 14
+gameauthor83.TextTransparency = 0
+gameauthor83.TextWrapped = true
+gameauthor83.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+gameauthor83.TextStrokeTransparency = 0
+gameauthor83.TextXAlignment = Enum.TextXAlignment.Left
+gameauthor83.TextYAlignment = Enum.TextYAlignment.Center
+gameauthor83.RichText = true
+gameauthor83.Active = false
+gameauthor83.Selectable = false
+gameauthor83.LayoutOrder = 67
+gameauthor83.ClipsDescendants = false
+gameauthor83.Rotation = 0
+gameauthor83.AnchorPoint = Vector2.new(0, 0)
+gameauthor83.Transparency = 1
+
+local uistroke84 = Instance.new('UIStroke')
+uistroke84.Name = "UIStroke"
+uistroke84.Parent = gameauthor83
+uistroke84.ZIndex = 1
+uistroke84.Color = Color3.fromRGB(0, 0, 0)
+uistroke84.Thickness = 1
+uistroke84.Transparency = 0
+uistroke84.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke84.LineJoinMode = Enum.LineJoinMode.Round
+uistroke84.Enabled = true
+
+local icon85 = Instance.new('ImageLabel')
+icon85.Name = "icon"
+icon85.Parent = player78
+icon85.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+icon85.BackgroundTransparency = 1
+icon85.BorderColor3 = Color3.fromRGB(0, 0, 0)
+icon85.BorderSizePixel = 0
+icon85.Position = UDim2.new(0, 0, 0, 0)
+icon85.Size = UDim2.new(0.08551865816116333, 0, 0.9999999403953552, 0)
+icon85.Visible = true
+icon85.ZIndex = 0
+icon85.Active = false
+icon85.Selectable = false
+icon85.LayoutOrder = 0
+icon85.ScaleType = Enum.ScaleType.Crop
+icon85.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+icon85.ImageColor3 = Color3.fromRGB(255, 255, 255)
+icon85.ImageTransparency = 0.25
+icon85.ImageRectOffset = Vector2.new(0, 0)
+icon85.ImageRectSize = Vector2.new(0, 0)
+icon85.SliceCenter = Rect.new(0, 0, 0, 0)
+icon85.SliceScale = 1
+icon85.ClipsDescendants = false
+icon85.Rotation = 0
+icon85.AnchorPoint = Vector2.new(0, 0)
+icon85.Transparency = 1
+
+local toggle86 = Instance.new('Folder')
+toggle86.Name = "toggle"
+toggle86.Parent = canvas2
+
+local toggle87 = Instance.new('ImageButton')
+toggle87.Name = "toggle"
+toggle87.Parent = toggle86
+toggle87.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+toggle87.BackgroundTransparency = 0.5
+toggle87.BorderColor3 = Color3.fromRGB(0, 0, 0)
+toggle87.BorderSizePixel = 0
+toggle87.Position = UDim2.new(0.9433611631393433, 0, 0.923940122127533, 0)
+toggle87.Size = UDim2.new(0.05663881078362465, 0, 0.07605984807014465, 0)
+toggle87.Visible = false
+toggle87.ZIndex = 1
+toggle87.AutoButtonColor = true
+toggle87.Active = true
+toggle87.Selectable = true
+toggle87.LayoutOrder = 0
+toggle87.ScaleType = Enum.ScaleType.Fit
+toggle87.Image = "rbxassetid://14808588"
+toggle87.ImageColor3 = Color3.fromRGB(255, 255, 255)
+toggle87.ImageTransparency = 0
+toggle87.ImageRectOffset = Vector2.new(0, 0)
+toggle87.ImageRectSize = Vector2.new(0, 0)
+toggle87.SliceCenter = Rect.new(0, 0, 0, 0)
+toggle87.SliceScale = 1
+toggle87.HoverImage = ""
+toggle87.PressedImage = ""
+toggle87.ClipsDescendants = false
+toggle87.Rotation = 0
+toggle87.AnchorPoint = Vector2.new(0, 0)
+toggle87.Transparency = 0.5
+toggle87.Style = Enum.ButtonStyle.Custom
+
+local uistroke188 = Instance.new('UIStroke')
+uistroke188.Name = "UIStroke1"
+uistroke188.Parent = toggle87
+uistroke188.ZIndex = 1
+uistroke188.Color = Color3.fromRGB(255, 255, 255)
+uistroke188.Thickness = 2
+uistroke188.Transparency = 0
+uistroke188.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke188.LineJoinMode = Enum.LineJoinMode.Round
+uistroke188.Enabled = true
+
+local uistroke289 = Instance.new('UIStroke')
+uistroke289.Name = "UIStroke2"
+uistroke289.Parent = toggle87
+uistroke289.ZIndex = 1
+uistroke289.Color = Color3.fromRGB(255, 255, 255)
+uistroke289.Thickness = 2
+uistroke289.Transparency = 0
+uistroke289.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+uistroke289.LineJoinMode = Enum.LineJoinMode.Round
+uistroke289.Enabled = true
+
+local textlabel90 = Instance.new('TextLabel')
+textlabel90.Name = "TextLabel"
+textlabel90.Parent = toggle87
+textlabel90.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+textlabel90.BackgroundTransparency = 1
+textlabel90.BorderColor3 = Color3.fromRGB(0, 0, 0)
+textlabel90.BorderSizePixel = 0
+textlabel90.Position = UDim2.new(0, 0, -0.3199999928474426, 0)
+textlabel90.Size = UDim2.new(1, 0, 0.26229506731033325, 0)
+textlabel90.Visible = true
+textlabel90.ZIndex = 1
+textlabel90.Font = Enum.Font.SourceSans
+textlabel90.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+textlabel90.Text = "toggle hub"
+textlabel90.TextColor3 = Color3.fromRGB(255, 255, 255)
+textlabel90.TextScaled = true
+textlabel90.TextSize = 14
+textlabel90.TextTransparency = 0
+textlabel90.TextWrapped = true
+textlabel90.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+textlabel90.TextStrokeTransparency = 0
+textlabel90.TextXAlignment = Enum.TextXAlignment.Center
+textlabel90.TextYAlignment = Enum.TextYAlignment.Center
+textlabel90.RichText = false
+textlabel90.Active = false
+textlabel90.Selectable = false
+textlabel90.LayoutOrder = 0
+textlabel90.ClipsDescendants = false
+textlabel90.Rotation = 0
+textlabel90.AnchorPoint = Vector2.new(0, 0)
+textlabel90.Transparency = 1
+
+local uilistlayout91 = Instance.new('UIListLayout')
+uilistlayout91.Name = "UIListLayout"
+uilistlayout91.Parent = toggle86
+uilistlayout91.FillDirection = Enum.FillDirection.Vertical
+uilistlayout91.HorizontalAlignment = Enum.HorizontalAlignment.Right
+uilistlayout91.VerticalAlignment = Enum.VerticalAlignment.Bottom
+uilistlayout91.SortOrder = Enum.SortOrder.LayoutOrder
+uilistlayout91.Padding = UDim.new(0, 0)
 
 local function fakescript1()
-	local script = Instance.new('LocalScript', infstam10)
+	local script = Instance.new('LocalScript', sidebar17)
+	local player = game.Players.LocalPlayer
+	local uid = player.UserId
+	local ts = game:GetService("TweenService")
+	local pages = script.Parent.Parent:WaitForChild("pages")
+	local current = ""
+	
+	local function showpage(page)
+		current = page
+		
+		for i, page in ipairs(pages:GetChildren()) do
+			if page:IsA("Frame") then
+				page.Visible = false
+			end
+		end
+		
+		pages:WaitForChild(page).Visible = true
+	end
+	
+	for i, button in ipairs(script.Parent:GetChildren()) do
+		if not button:IsA("GuiButton") then continue end
+		local defaultsize = button.Size
+		local hoversize = UDim2.new(defaultsize.X.Scale * 1.05, defaultsize.X.Offset, defaultsize.Y.Scale * 1.05, defaultsize.Y.Offset)
+		
+		local hint = button:WaitForChild("hint"):WaitForChild("label")
+		hint.Text = "<  " .. button.Name
+		hint.LayoutOrder = 67
+		
+		hint.Transparency = 1
+		for i, stroke in ipairs(hint:GetChildren()) do
+			if stroke:IsA("UIStroke") then
+				stroke.Transparency = 1
+			end
+		end
+		
+		local function hoverlabel(state)
+			if state == true then
+				ts:Create(hint, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 0}):Play()
+				for i, stroke in ipairs(hint:GetChildren()) do
+					if stroke:IsA("UIStroke") then
+						ts:Create(stroke, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Transparency = 0.25}):Play()
+					end
+				end
+			else
+				ts:Create(hint, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 1}):Play()
+				for i, stroke in ipairs(hint:GetChildren()) do
+					if stroke:IsA("UIStroke") then
+						ts:Create(stroke, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Transparency = 1}):Play()
+					end
+				end
+			end
+		end
+		
+		button.MouseEnter:Connect(function()
+			hoverlabel(true)
+			script.hover:Play()
+			ts:Create(button, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = hoversize}):Play()
+		end)
+		
+		button.MouseLeave:Connect(function()
+			hoverlabel(false)
+			ts:Create(button, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = defaultsize}):Play()
+		end)
+		
+		button.MouseButton1Click:Connect(function()
+			if pages:FindFirstChild(button.Name) then
+				script.click:Play()
+				showpage(button.Name)
+			end
+		end)
+	end
+	
+	showpage("home")
+end
+coroutine.wrap(fakescript1)()
+
+local function fakescript2()
+	local script = Instance.new('LocalScript', infstam49)
 	local button = script.Parent
 	
 	button.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.Parent.vals.infstam.Value = not script.Parent.Parent.Parent.Parent.vals.infstam.Value
+		script.Parent.Parent.Parent.vals.infstam.Value = not script.Parent.Parent.Parent.vals.infstam.Value
 		
-		if script.Parent.Parent.Parent.Parent.vals.infstam.Value then
+		if script.Parent.Parent.Parent.vals.infstam.Value then
 			button.Text = "infinite stamina (on)"
 		else
 			button.Text = "infinite stamina (off)"
 		end
 	end)
 end
-coroutine.wrap(fakescript1)()
-
-local function fakescript2()
-	local script = Instance.new('LocalScript', walkspeed13)
-	local button = script.Parent.button
-	local input = script.Parent.input
-	
-	button.MouseButton1Click:Connect(function()
-		if tonumber(input.Text) then
-			script.Parent.Parent.Parent.Parent.vals.walkspeed.Value = tonumber(input.Text)
-		else
-			script.Parent.Parent.Parent.Parent.vals.walkspeed.Value = 10
-		end
-	end)
-end
 coroutine.wrap(fakescript2)()
 
 local function fakescript3()
-	local script = Instance.new('LocalScript', sprintspeed22)
+	local script = Instance.new('LocalScript', walkspeed52)
 	local button = script.Parent.button
 	local input = script.Parent.input
 	
 	button.MouseButton1Click:Connect(function()
 		if tonumber(input.Text) then
-			script.Parent.Parent.Parent.Parent.vals.sprintspeed.Value = tonumber(input.Text)
+			script.Parent.Parent.Parent.vals.walkspeed.Value = tonumber(input.Text)
 		else
-			script.Parent.Parent.Parent.Parent.vals.sprintspeed.Value = 26
+			script.Parent.Parent.Parent.vals.walkspeed.Value = 10
 		end
 	end)
 end
 coroutine.wrap(fakescript3)()
 
 local function fakescript4()
-	local script = Instance.new('LocalScript', button34)
-	local button = script.Parent
+	local script = Instance.new('LocalScript', sprintspeed61)
+	local button = script.Parent.button
+	local input = script.Parent.input
 	
 	button.MouseButton1Click:Connect(function()
-		button.Parent.Parent.container.Visible = not button.Parent.Parent.container.Visible
-		
-		if button.Parent.Parent.container.Visible then
-			button.Text = ">"
+		if tonumber(input.Text) then
+			script.Parent.Parent.Parent.vals.sprintspeed.Value = tonumber(input.Text)
 		else
-			button.Text = "<"
+			script.Parent.Parent.Parent.vals.sprintspeed.Value = 26
 		end
 	end)
 end
 coroutine.wrap(fakescript4)()
 
 local function fakescript5()
-	local script = Instance.new('LocalScript', skibidi1)
-	local playergui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-	script.Parent.Name = "skibidinew"
-	
-	while playergui:FindFirstChild("skibidi") do
-		playergui:FindFirstChild("skibidi"):Destroy()
-		task.wait()
-	end
-	
-	script.Parent.Name = "skibidi"
-end
-coroutine.wrap(fakescript5)()
-
-local function fakescript6()
-	local script = Instance.new('LocalScript', vals37)
+	local script = Instance.new('LocalScript', vals70)
 	local player = game.Players.LocalPlayer
 	
 	local function setupchar(char)
@@ -750,4 +1591,203 @@ local function fakescript6()
 		task.spawn(setupchar, player.Character)
 	end
 end
+coroutine.wrap(fakescript5)()
+
+local function fakescript6()
+	local script = Instance.new('LocalScript', games45)
+	for i, frame in ipairs(script.Parent:GetChildren()) do
+		if frame:IsA("Frame") then
+			frame.Visible = false
+		end
+	end
+	
+	if script.Parent:FindFirstChild(tostring(game.PlaceId)) then
+		script.Parent:FindFirstChild(tostring(game.PlaceId)).Visible = true
+		
+		for i, script in ipairs(script.Parent:FindFirstChild(tostring(game.PlaceId)):GetChildren()) do
+			if script:IsA("LocalScript") then
+				script.Enabled = true
+			end
+		end
+	else
+		script.Parent:FindFirstChild("no").Visible = true
+	end
+end
 coroutine.wrap(fakescript6)()
+
+local function fakescript7()
+	local script = Instance.new('LocalScript', player78)
+	local bg = script.Parent:WaitForChild("bg")
+	local mps = game:GetService("MarketplaceService")
+	local gs = game:GetService("GroupService")
+	local us = game:GetService("UserService")
+	local players = game:GetService("Players")
+	local pid = game.PlaceId
+	
+	local hascustomcommands = (script.Parent.Parent:WaitForChild("pages"):WaitForChild("game"):WaitForChild("games"):FindFirstChild(pid) ~= nil)
+	
+	bg.Image = "rbxthumb://type=Asset&id=" .. pid .. "&w=768&h=432"
+	
+	pcall(function()
+		local gameinfo = mps:GetProductInfoAsync(pid)
+		if gameinfo then
+			script.Parent:WaitForChild("icon").Image = "rbxassetid://" .. gameinfo.IconImageAssetId
+			script.Parent:WaitForChild("gamename").Text = gameinfo.Name .. " (unsupported)"
+			
+			if hascustomcommands then
+				script.Parent:WaitForChild("gamename").Text = gameinfo.Name .. " (supported!)"
+			end
+			
+			if gameinfo.IconImageAssetId == 0 then
+				script.Parent:WaitForChild("icon").Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+			end
+		end
+	end)
+	
+	local authorname = "unknown"
+	local authorid = game.CreatorId
+	
+	if authorid > 0 then
+		if game.CreatorType == Enum.CreatorType.Group then
+			pcall(function()
+				authorname = gs:GetGroupInfoAsync(authorid).Name
+			end)
+		elseif game.CreatorType == Enum.CreatorType.User then
+			pcall(function()
+				local data = us:GetUserInfosByUserIdsAsync({authorid})
+				if data and data[1] then
+					local userinfo = data[1]
+					local displayname = userinfo.DisplayName or ""
+					local username = userinfo.Name or ""
+					authorname = displayname .. " (@" .. username .. ")"
+				else
+					authorname = players:GetNameFromUserIdAsync(authorid)
+				end
+			end)
+		end
+	end
+	
+	script.Parent:WaitForChild("gameauthor").Text = "by " .. authorname
+end
+coroutine.wrap(fakescript7)()
+
+local function fakescript8()
+	local script = Instance.new('LocalScript', toggle87)
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.main.Visible = not script.Parent.Parent.Parent.main.Visible
+	end)
+end
+coroutine.wrap(fakescript8)()
+
+local function fakescript9()
+	local script = Instance.new('LocalScript', plushub1)
+	local ui = script.Parent
+	local canvas = ui:WaitForChild("canvas")
+	local main = canvas:WaitForChild("main")
+	local loadframe = canvas:WaitForChild("load")
+	local contentservice = game:GetService("ContentProvider")
+	local tween = game:GetService("TweenService")
+	
+	main.Visible = false
+	loadframe.Visible = true
+	
+	local function gatherids()
+		local ids = {}
+		
+		for i, obj in ipairs(ui:GetDescendants()) do
+			if obj:IsA("ImageButton") or obj:IsA("ImageLabel") then
+				local id = obj.Image
+				if id ~= "" and not table.find(ids, id) then
+					table.insert(ids, id)
+				end
+			end
+		end
+		
+		return ids
+	end
+	
+	local loadingmsgs = {
+		"boiii loading",
+		"loading",
+		"plz wait"
+	}
+	
+	local function load()
+		local fillstartpos = UDim2.new(0, 0, 0.758, 0)
+		local fillendpos = UDim2.new(0.974, 0, 0.758, 0)
+		
+		local label = loadframe:WaitForChild("Folder"):WaitForChild("label")
+		local bar = loadframe:WaitForChild("Folder"):WaitForChild("bar")
+		local fill = bar:WaitForChild("fill")
+		
+		local done = false
+		
+		task.spawn(function()
+			while not done do
+				label.Text = loadingmsgs[math.random(1, #loadingmsgs)]
+				task.wait(5)
+			end
+		end)
+		
+		local ids = gatherids()
+		local total = #ids
+		local loaded = 0
+		
+		for i, id in ipairs(ids) do
+			contentservice:PreloadAsync({id})
+			loaded = loaded + 1
+			fill.Size = fillstartpos:Lerp(fillendpos, loaded / total)
+		end
+		
+		done = true
+		label.Text = "loaded!"
+		
+		task.wait(2)
+		
+		tween:Create(
+			loadframe,
+			TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+			{
+				Size = UDim2.new(0, 0, 0, 0),
+				GroupTransparency = 1
+			}
+		):Play()
+		
+		tween:Create(
+			loadframe.UIStroke,
+			TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+			{
+				Transparency = 1
+			}
+		):Play()
+		
+		task.wait(0.5)
+		
+		loadframe.Visible = false
+		canvas.toggle.toggle.Visible = true
+		main.Visible = true
+		main.Size = UDim2.new(0, 0, 0, 0)
+		main.GroupTransparency = 1
+		main.UIStroke.Transparency = 1
+		
+		tween:Create(
+			main,
+			TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+			{
+				Size = UDim2.new(0.767, 0, 0.643, 0),
+				GroupTransparency = 0
+			}
+		):Play()
+		
+		tween:Create(
+			main.UIStroke,
+			TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+			{
+				Transparency = 0
+			}
+		):Play()
+	end
+	
+	load()
+end
+coroutine.wrap(fakescript9)()
