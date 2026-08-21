@@ -320,7 +320,7 @@ home20.AutoButtonColor = true
 home20.Active = true
 home20.Selectable = true
 home20.LayoutOrder = 0
-home20.ScaleType = Enum.ScaleType.Fit
+home20.ScaleType = Enum.ScaleType.Crop
 home20.Image = "rbxassetid://5629023183"
 home20.ImageColor3 = Color3.new(1, 1, 1)
 home20.ImageTransparency = 0
@@ -470,7 +470,7 @@ game30.AutoButtonColor = true
 game30.Active = true
 game30.Selectable = true
 game30.LayoutOrder = 1
-game30.ScaleType = Enum.ScaleType.Fit
+game30.ScaleType = Enum.ScaleType.Crop
 game30.Image = "rbxassetid://8508980527"
 game30.ImageColor3 = Color3.new(1, 1, 1)
 game30.ImageTransparency = 0
@@ -1734,10 +1734,7 @@ coroutine.wrap(fakescript5)()
 local function fakescript6()
 	local script = Instance.new('LocalScript', games45)
 	script.Name = "game"
-	task.wait(0.1)
-	
 	local placeid = tostring(game.PlaceId)
-	local gameid = tostring(game.GameId)
 	local parent = script.Parent
 	
 	print(placeid)
@@ -1748,7 +1745,7 @@ local function fakescript6()
 		end
 	end
 	
-	local targetframe = parent:FindFirstChild(placeid) or parent:FindFirstChild(gameid)
+	local targetframe = parent:FindFirstChild(placeid)
 	
 	if targetframe then
 		targetframe.Visible = true
