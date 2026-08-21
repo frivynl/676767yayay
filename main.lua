@@ -1734,7 +1734,10 @@ coroutine.wrap(fakescript5)()
 local function fakescript6()
 	local script = Instance.new('LocalScript', games45)
 	script.Name = "game"
+	task.wait(0.1)
+	
 	local placeid = tostring(game.PlaceId)
+	local gameid = tostring(game.GameId)
 	local parent = script.Parent
 	
 	for i, child in ipairs(parent:GetChildren()) do
@@ -1743,7 +1746,7 @@ local function fakescript6()
 		end
 	end
 	
-	local targetframe = parent:FindFirstChild(placeid)
+	local targetframe = parent:FindFirstChild(placeid) or parent:FindFirstChild(gameid)
 	
 	if targetframe then
 		targetframe.Visible = true
@@ -1753,7 +1756,7 @@ local function fakescript6()
 			end
 		end
 	else
-		local noframe = parent:FindFirstChild("no")
+		local noframe = parent:WaitForChild("no", 2)
 		if noframe then
 			noframe.Visible = true
 		end
