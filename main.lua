@@ -632,9 +632,9 @@ local function fakescript1()
 	
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
-	local vals = character.Values
-	local stam = vals.Sprinting.Stamina
-	local maxstam = vals.Sprinting.MaxStaminaVariable
+	local vals = character:WaitForChild("Values")
+	local stam = vals:WaitForChild("Sprinting"):WaitForChild("Stamina")
+	local maxstam = vals:WaitForChild("Sprinting"):WaitForChild("MaxStaminaVariable")
 	
 	stam.Changed:Connect(function()
 		if stam.Value == maxstam.Value then return end
@@ -675,16 +675,25 @@ local function fakescript2()
 	local input = script.Parent.input
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
-	local vals = character.Values
-	local val = vals.OriginalSpeed
+	local vals = character:WaitForChild("Values")
+	local val = vals:WaitForChild("OriginalSpeed")
+	
+	local forcedspeed = 10
 	
 	player.CharacterAdded:Connect(function(char)
 		character = char
-		vals = character.Values
-		val = vals.OriginalSpeed
+		vals = character:WaitForChild("Values")
+		val = vals:WaitForChild("OriginalSpeed")
+		
+		task.spawn(function()
+			while task.wait(0.1) do
+				if val then
+					val.Value = forcedspeed
+				end
+			end
+		end)
 	end)
 	
-	local forcedspeed = 10
 	
 	button.MouseButton1Click:Connect(function()
 		if tonumber(input.Text) then
@@ -696,7 +705,9 @@ local function fakescript2()
 	
 	task.spawn(function()
 		while task.wait(0.1) do
-			val.Value = forcedspeed
+			if val then
+				val.Value = forcedspeed
+			end
 		end
 	end)
 end
@@ -708,16 +719,25 @@ local function fakescript3()
 	local input = script.Parent.input
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
-	local vals = character.Values
-	local val = vals.RunningSpeed
+	local vals = character:WaitForChild("Values")
+	local val = vals:WaitForChild("RunningSpeed")
+	
+	local forcedspeed = 26
 	
 	player.CharacterAdded:Connect(function(char)
 		character = char
-		vals = character.Values
-		val = vals.RunningSpeed
+		vals = character:WaitForChild("Values")
+		val = vals:WaitForChild("RunningSpeed")
+		
+		task.spawn(function()
+			while task.wait(0.1) do
+				if val then
+					val.Value = forcedspeed
+				end
+			end
+		end)
 	end)
 	
-	local forcedspeed = 26
 	
 	button.MouseButton1Click:Connect(function()
 		if tonumber(input.Text) then
@@ -729,7 +749,9 @@ local function fakescript3()
 	
 	task.spawn(function()
 		while task.wait(0.1) do
-			val.Value = forcedspeed
+			if val then
+				val.Value = forcedspeed
+			end
 		end
 	end)
 end
@@ -750,3 +772,17 @@ local function fakescript4()
 	end)
 end
 coroutine.wrap(fakescript4)()
+
+local function fakescript5()
+	local script = Instance.new('LocalScript', skibidi1)
+	local playergui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	script.Parent.Name = "skibidinew"
+	
+	while playergui:FindFirstChild("skibidi") do
+		playergui:FindFirstChild("skibidi"):Destroy()
+		task.wait()
+	end
+	
+	script.Parent.Name = "skibidi"
+end
+coroutine.wrap(fakescript5)()
