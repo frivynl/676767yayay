@@ -1440,6 +1440,33 @@ uilistlayout91.Padding = UDim.new(0, 0)
 
 local function fakescript1()
 	local script = Instance.new('LocalScript', sidebar17)
+	script.Name = "handler"
+	local hover92 = Instance.new('Sound')
+	hover92.Name = "hover"
+	hover92.Parent = script
+	hover92.SoundId = "rbxassetid://12221976"
+	hover92.Volume = 0.5
+	hover92.PlaybackSpeed = 1
+	hover92.Looped = false
+	hover92.Playing = false
+	hover92.TimePosition = 0
+	hover92.RollOffMaxDistance = 10000
+	hover92.RollOffMinDistance = 10
+	hover92.RollOffMode = Enum.RollOffMode.Inverse
+	hover92.Pitch = 1
+	local click93 = Instance.new('Sound')
+	click93.Name = "click"
+	click93.Parent = script
+	click93.SoundId = "rbxassetid://12222076"
+	click93.Volume = 0.5
+	click93.PlaybackSpeed = 1
+	click93.Looped = false
+	click93.Playing = false
+	click93.TimePosition = 0
+	click93.RollOffMaxDistance = 10000
+	click93.RollOffMinDistance = 10
+	click93.RollOffMode = Enum.RollOffMode.Inverse
+	click93.Pitch = 1
 	local player = game.Players.LocalPlayer
 	local uid = player.UserId
 	local ts = game:GetService("TweenService")
@@ -1517,6 +1544,7 @@ coroutine.wrap(fakescript1)()
 
 local function fakescript2()
 	local script = Instance.new('LocalScript', infstam49)
+	script.Name = "handler"
 	local button = script.Parent
 	
 	button.MouseButton1Click:Connect(function()
@@ -1533,6 +1561,7 @@ coroutine.wrap(fakescript2)()
 
 local function fakescript3()
 	local script = Instance.new('LocalScript', walkspeed52)
+	script.Name = "handler"
 	local button = script.Parent.button
 	local input = script.Parent.input
 	
@@ -1548,6 +1577,7 @@ coroutine.wrap(fakescript3)()
 
 local function fakescript4()
 	local script = Instance.new('LocalScript', sprintspeed61)
+	script.Name = "handler"
 	local button = script.Parent.button
 	local input = script.Parent.input
 	
@@ -1563,6 +1593,7 @@ coroutine.wrap(fakescript4)()
 
 local function fakescript5()
 	local script = Instance.new('LocalScript', vals70)
+	script.Name = "worker"
 	local player = game.Players.LocalPlayer
 	
 	local function setupchar(char)
@@ -1595,6 +1626,7 @@ coroutine.wrap(fakescript5)()
 
 local function fakescript6()
 	local script = Instance.new('LocalScript', games45)
+	script.Name = "game"
 	for i, frame in ipairs(script.Parent:GetChildren()) do
 		if frame:IsA("Frame") then
 			frame.Visible = false
@@ -1617,6 +1649,7 @@ coroutine.wrap(fakescript6)()
 
 local function fakescript7()
 	local script = Instance.new('LocalScript', player78)
+	script.Name = "mps"
 	local bg = script.Parent:WaitForChild("bg")
 	local mps = game:GetService("MarketplaceService")
 	local gs = game:GetService("GroupService")
@@ -1673,6 +1706,7 @@ coroutine.wrap(fakescript7)()
 
 local function fakescript8()
 	local script = Instance.new('LocalScript', toggle87)
+	script.Name = "LocalScript"
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.main.Visible = not script.Parent.Parent.Parent.main.Visible
 	end)
@@ -1681,6 +1715,16 @@ coroutine.wrap(fakescript8)()
 
 local function fakescript9()
 	local script = Instance.new('LocalScript', plushub1)
+	script.Name = "startup"
+	script.Parent.Name = "plushubx3"
+	
+	while game.Players.LocalPlayer.PlayerGui:FindFirstChild("plushub") do
+		game.Players.LocalPlayer.PlayerGui:WaitForChild("plushub"):Destroy()
+		task.wait()
+	end
+	
+	script.Parent.Name = "plushub"
+	
 	local ui = script.Parent
 	local canvas = ui:WaitForChild("canvas")
 	local main = canvas:WaitForChild("main")
